@@ -1,6 +1,6 @@
 /* Example with @emotion/styled */
-import styled from "@emotion/styled";
-import xw, { cx } from "xwind";
+import styled from '@emotion/styled';
+import xw, { cx } from 'xwind';
 
 const Button = styled.button(xw`
   relative
@@ -32,7 +32,7 @@ const Icon = styled.svg(xw`
 `);
 
 const ButtonStyled = ({ className, children, ...props }) => (
-  <Button {...props} className={cx("group", className)}>
+  <Button {...props} className={cx('group', className)}>
     <IconWrapper>
       <Icon fill="currentColor" viewBox="0 0 20 20">
         <path

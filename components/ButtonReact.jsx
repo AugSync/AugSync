@@ -1,7 +1,7 @@
 /* Example with @emotion/react */
-import xw, { cx } from "xwind";
+import xw, { cx } from 'xwind';
 
-//"react native style"
+// "react native style"
 const styles = {
   button: xw`
     relative
@@ -21,8 +21,8 @@ const styles = {
 };
 
 const ButtonReact = ({ className, children, ...props }) => (
-  <button {...props} css={styles.button} className={cx("group", className)}>
-    {/* inline style*/}
+  <button {...props} css={styles.button} className={cx('group', className)}>
+    {/* inline style */}
     <span css={xw`absolute left-0 inset-y-0 flex items-center pl-3`}>
       <svg
         css={xw`h-5 w-5 text-gray-500 group-hover:text-gray-400 transition ease-in-out duration-150`}
