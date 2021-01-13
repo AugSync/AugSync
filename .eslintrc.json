@@ -4,6 +4,7 @@
     "es2021": true
   },
   "extends": [
+    "plugin:tailwind/recommended",
     "plugin:react/recommended",
     "airbnb",
     "prettier",
@@ -20,17 +21,27 @@
     "sourceType": "module"
   },
   "plugins": ["react", "@typescript-eslint"],
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": ["./src"],
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
+  },
   "rules": {
+    "react/jsx-filename-extension": [1, { "extensions": [".jsx", ".tsx"] }],
     "react/react-in-jsx-scope": "off",
     "react/jsx-props-no-spreading": "off",
     "react/prop-types": "off",
     "linebreak-style": "off",
+    "import/extensions": 0,
     "prettier/prettier": [
       "error",
       {
         "trailingComma": "es5",
         "tabWidth": 2,
-        "semi": false,
+        "semi": true,
         "singleQuote": true
       }
     ]
