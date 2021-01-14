@@ -6,7 +6,7 @@ function App({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>Tailwindcss Emotion Example</title>
+        <title>Augusto Barco | Full Stack Developer</title>
       </Head>
       <Component {...pageProps} />
     </>

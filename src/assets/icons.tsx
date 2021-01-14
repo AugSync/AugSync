@@ -1,7 +1,9 @@
-interface IconProps {
-  name: string;
+import { Facebook, Twitter, Github, LinkedIn } from 'assets/socialMediaIcons';
+
+export interface IconProps {
+  name?: string;
   color?: string;
-  className: string;
+  className?: string;
 }
 
 export function Home(props: IconProps) {
@@ -94,6 +96,14 @@ export default function Icon(props: IconProps) {
       return <Folder {...props} />;
     case 'mail':
       return <Mail {...props} />;
+    case 'facebook':
+      return <Facebook {...props} />;
+    case 'twitter':
+      return <Twitter {...props} />;
+    case 'github':
+      return <Github {...props} />;
+    case 'linked-in':
+      return <LinkedIn {...props} />;
     default:
       return <Home {...props} />;
   }

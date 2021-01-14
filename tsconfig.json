@@ -15,13 +15,7 @@
     "jsx": "preserve",
     "baseUrl": "./src"
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    "pages/index.tsx",
-    "src/assets/icons.jsx"
-  ],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/index.tsx"],
   "exclude": ["node_modules"],
   "plugins": []
 }
