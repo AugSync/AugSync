@@ -16,6 +16,16 @@ body {
   @apply px-4 py-2 font-bold text-white bg-blue-500 rounded;
 }
 
+@font-face {
+  font-family: 'Play';
+  src: url('/fonts/Play/Play-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  src: url('/fonts/Ubuntu/Ubuntu-Regular.ttf');
+}
+
 /* Start purging... */
 @tailwind utilities;
 /* Stop purging. */
