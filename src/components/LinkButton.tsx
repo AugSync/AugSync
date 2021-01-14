@@ -29,6 +29,7 @@ export default React.forwardRef(function LinkButton(
       py-3 px-4 
       text-white 
       text-base
+      font-ubuntu
       flex items-center justify-center 
       focus:outline-none focus:ring-2 focus:ring-green focus:ring-inset
       `,
