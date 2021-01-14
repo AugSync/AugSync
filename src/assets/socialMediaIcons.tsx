@@ -4,8 +4,8 @@ export function Facebook(props: IconProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="18"
-      height="32"
+      width={props.width || '18'}
+      height={props.width || '32'}
       fill="none"
       viewBox="0 0 18 32"
       {...props}
@@ -22,8 +22,8 @@ export function Twitter(props: IconProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="20"
-      height="30"
+      width={props.width || '20'}
+      height={props.width || '30'}
       fill="none"
       viewBox="0 0 20 30"
       {...props}
@@ -42,8 +42,8 @@ export function Github(props: IconProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="40"
-      height="40"
+      width={props.width || '40'}
+      height={props.width || '40'}
       fill="none"
       viewBox="0 0 40 40"
       {...props}
@@ -62,8 +62,8 @@ export function LinkedIn(props: IconProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="40"
-      height="40"
+      width={props.width || '40'}
+      height={props.width || '40'}
       fill="none"
       viewBox="0 0 40 40"
       {...props}

@@ -11,6 +11,8 @@ export default React.forwardRef(function LinkButton(
     onClick?: () => void;
     href?: string;
     activeByRoute?: boolean;
+    iconWith?: string;
+    iconHeight?: string;
   },
   ref: any
 ) {
@@ -37,7 +39,11 @@ export default React.forwardRef(function LinkButton(
       )}
       ref={ref}
     >
-      <Icon name={props.icon} className="mr-2" />
+      <Icon
+        name={props.icon}
+        className="mr-2 w-10"
+        width={props.iconWith || '1.5rem'}
+      />
       {props.title}
     </a>
   );

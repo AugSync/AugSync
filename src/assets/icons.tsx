@@ -4,14 +4,16 @@ export interface IconProps {
   name?: string;
   color?: string;
   className?: string;
+  width?: string;
+  height?: string;
 }
 
 export function Home(props: IconProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="21"
+      width={props.width || '24'}
+      height={props.width || '21'}
       fill="none"
       viewBox="0 0 24 21"
       className={props.className}
@@ -30,8 +32,8 @@ export function Document(props: IconProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="22"
+      width={props.width || '24'}
+      height={props.width || '22'}
       fill="none"
       viewBox="0 0 24 22"
       className={props.className}
@@ -50,8 +52,8 @@ export function Folder(props: IconProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="21"
+      width={props.width || '24'}
+      height={props.width || '21'}
       fill="none"
       viewBox="0 0 24 21"
       className={props.className}
@@ -70,8 +72,8 @@ export function Mail(props: IconProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="22"
+      width={props.width || '24'}
+      height={props.width || '22'}
       fill="none"
       viewBox="0 0 24 22"
       className={props.className}
