@@ -1,10 +1,10 @@
 import Header from 'components/Header';
 
-export default function Home() {
+export default function Blog() {
   return (
     <>
       <Header />
-      <h1>Home</h1>
+      <h1>Blog</h1>
     </>
   );
 }
