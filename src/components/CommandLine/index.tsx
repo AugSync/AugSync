@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
 import clsx from 'clsx';
 
 interface cmdProps {
@@ -7,12 +8,13 @@ interface cmdProps {
   color?: string;
   isResponse?: boolean;
   idx?: number;
+  currentPage?: string;
 }
 
 const HomePwd = (props: cmdProps) => (
   <span
     className="text-base sm:text-xl xl:text-2xl text-white font-play leading-3"
-    id={`home-${props.idx}`}
+    id={`home-${props.currentPage}-${props.idx}`}
   />
 );
 const Folder = (props: cmdProps) => (
@@ -21,19 +23,19 @@ const Folder = (props: cmdProps) => (
       'text-base sm:text-xl xl:text-2xl  font-play leading-3',
       props.color || 'text-orange-light'
     )}
-    id={`folder-${props.idx}`}
+    id={`folder-${props.currentPage}-${props.idx}`}
   />
 );
 const Split = (props: cmdProps) => (
   <span
     className="text-base sm:text-xl xl:text-2xl text-white font-play leading-3"
-    id={`split-${props.idx}`}
+    id={`split-${props.currentPage}-${props.idx}`}
   />
 );
 const CmdInput = (props: cmdProps) => (
   <span
     className="text-base sm:text-xl xl:text-2xl text-white font-play mx-2 leading-3"
-    id={`input-${props.idx}`}
+    id={`input-${props.currentPage}-${props.idx}`}
   />
 );
 const Output = (props: cmdProps) => (
@@ -42,25 +44,30 @@ const Output = (props: cmdProps) => (
       'text-base sm:text-xl xl:text-2xl  font-play leading-tight',
       props.color || 'text-white'
     )}
-    id={`output-${props.idx}`}
+    id={`output-${props.currentPage}-${props.idx}`}
   />
 );
 
 const CommandLineRender = (props: { values: cmdProps[] }) => {
+  const router = useRouter();
+  const [currentPage, setCurrentPage] = useState<string>();
+  const commandLineRef = React.useRef(null);
+
   function startTyping(value: cmdProps, idx: number) {
     return new Promise((resolve, reject) => {
       const { type, title, isResponse } = value;
-      const speed = 200;
+      const speed = 50;
 
       if (type !== 'break') {
         try {
-          
           // write text directly
           if (
             (type === 'output' && isResponse) ||
             ['home', 'folder', 'split'].includes(type)
           ) {
-            const element = document.getElementById(`${type}-${idx}`);
+            const element = document.getElementById(
+              `${type}-${currentPage}-${idx}`
+            );
             if (element) {
               element.innerHTML += title;
               return resolve('');
@@ -73,7 +80,7 @@ const CommandLineRender = (props: { values: cmdProps[] }) => {
           let i = 0;
           const typeWriter = () => {
             if (i < title.length) {
-              const element = document.getElementById(`${type}-${idx}`);
+              const element = document.getElementById(`${type}-${currentPage}-${idx}`);
               if (element) {
                 element.innerHTML += title.charAt(i);
                 i++;
@@ -94,45 +101,72 @@ const CommandLineRender = (props: { values: cmdProps[] }) => {
 
   useEffect(() => {
     (async () => {
-      let index = 0;
-      for (const value of props.values) {
-        try {
-          await startTyping(value, index);
-          index++;
-        } catch (error) {}
+      if (currentPage) {
+        let index = 0;
+        for (const value of props.values) {
+          try {
+            await startTyping(value, index);
+            commandLineRef.current.scrollIntoView({ behavior: 'smooth' });
+            index++;
+          } catch (error) {}
+        }
       }
     })();
-  }, [props.values]);
+  }, [props.values, currentPage]);
+
+  useEffect(() => {
+    setCurrentPage(router.pathname);
+  }, [router.pathname]);
+
   return (
-    <>
-      {props.values.map(({ type, title, color }, idx) => {
-        switch (type) {
-          case 'home':
-            return <HomePwd idx={idx} key={idx} />;
-          case 'folder':
-            return <Folder idx={idx} title={title} color={color} key={idx} />;
-          case 'split':
-            return <Split idx={idx} key={idx} />;
-          case 'input':
-            return <CmdInput idx={idx} key={idx} />;
-          case 'output':
-            return <Output idx={idx} title={title} color={color} key={idx} />;
-          case 'break':
-            return <br key={idx} />;
-          default:
-            return <HomePwd idx={idx} key={idx} />;
-        }
-      })}
-    </>
+    <div className="container p-10 m-auto">
+      {currentPage &&
+        props.values.map(({ type, title, color }, idx) => {
+          switch (type) {
+            case 'home':
+              return <HomePwd idx={idx} key={idx} currentPage={currentPage} />;
+            case 'folder':
+              return (
+                <Folder
+                  idx={idx}
+                  title={title}
+                  color={color}
+                  key={idx}
+                  currentPage={currentPage}
+                />
+              );
+            case 'split':
+              return <Split idx={idx} key={idx} currentPage={currentPage} />;
+            case 'input':
+              return <CmdInput idx={idx} key={idx} currentPage={currentPage} />;
+            case 'output':
+              return (
+                <Output
+                  idx={idx}
+                  title={title}
+                  color={color}
+                  key={idx}
+                  currentPage={currentPage}
+                />
+              );
+            case 'break':
+              return <br key={idx} />;
+            default:
+              return <HomePwd idx={idx} key={idx} currentPage={currentPage} />;
+          }
+        })}
+      <div ref={commandLineRef} />
+    </div>
   );
 };
 
 export default function CommandLine(props: { values: cmdProps[] }) {
   return (
-    <div className="bg-green h-auto pt-3 pb-10">
-      <div className="container p-10 m-auto">
-        <CommandLineRender values={props.values} />
-      </div>
+    <div
+      className="bg-green pt-3 pb-10 overflow-x-auto"
+      style={{ height: '30rem' }}
+    >
+      <CommandLineRender values={props.values} />
     </div>
   );
 }
