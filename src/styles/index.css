@@ -32,10 +32,10 @@ body {
 
 @font-face {
   font-family: 'Play';
-  src: url('/fonts/Play/Play-Regular.ttf');
+  src: url('/fonts/play/Play-Regular.ttf');
 }
 
 @font-face {
   font-family: 'Ubuntu';
-  src: url('/fonts/Ubuntu/Ubuntu-Regular.ttf');
+  src: url('/fonts/ubuntu/Ubuntu-Regular.ttf');
 }
