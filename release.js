@@ -14,6 +14,7 @@ const prNumberRegex = /\(#([-0-9]+)\)/;
 const getCommitPullRequest = async (commit, github) => {
   const match = prNumberRegex.exec(commit.title);
 
+  console.log(JSON.stringify({ commitProps: commit }, null, 2));
   console.log(JSON.stringify({ match, commitTitleL: commit.title }), null, 2);
 
   if (!match) {
@@ -35,7 +36,7 @@ const getCommitPullRequest = async (commit, github) => {
   });
 
   console.log(
-    JSON.stringify({ prData: data, commitTitleL: commit.title }),
+    JSON.stringify({ prData: data, commitTitle: commit.title }),
     null,
     2
   );
