@@ -6,10 +6,7 @@ I was born in Venezuela 🌄. I am 19 years old 👶. 6 years ago I started in t
 
 👽 I keep my knowledge updated at [Platzi](https://platzi.com/p/AugSync/), where I have 31 certifications so far.
 
-
-  
 ![César Augusto's github stats](https://github-readme-stats.vercel.app/api?username=AugSync&show_icons=true&theme=onedark)
-
 
 #### **Social Media Profiles**
 
