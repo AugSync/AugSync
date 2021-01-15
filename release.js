@@ -52,6 +52,7 @@ const groupByLabels = async (commits, github) => {
     sections[section] = [];
     return sections;
   }, {});
+  console.log(JSON.stringify({ firstSections: sections }), null, 2);
   sections.__fallback = [];
 
   for (const commit of commits) {
@@ -158,7 +159,9 @@ module.exports = async (markdown, metadata) => {
   const github = { connection: githubConnection, repoDetails };
 
   const sections = await groupByLabels(commits.all, github);
+  console.log(JSON.stringify(sections, null, 2));
   const changelog = buildChangelog(sections, authors);
+  console.log(changelog);
 
   return changelog;
 };
