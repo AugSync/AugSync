@@ -54,6 +54,8 @@ const CommandLineRender = (props: { values: cmdProps[] }) => {
 
       if (type !== 'break') {
         try {
+          
+          // write text directly
           if (
             (type === 'output' && isResponse) ||
             ['home', 'folder', 'split'].includes(type)
@@ -66,8 +68,9 @@ const CommandLineRender = (props: { values: cmdProps[] }) => {
 
             return reject('');
           }
-          let i = 0;
 
+          // write text with timeout
+          let i = 0;
           const typeWriter = () => {
             if (i < title.length) {
               const element = document.getElementById(`${type}-${idx}`);
