@@ -14,11 +14,15 @@ const prNumberRegex = /\(#([-0-9]+)\)/;
 const getCommitPullRequest = async (commit, github) => {
   const match = prNumberRegex.exec(commit.title);
 
+  console.log(JSON.stringify({ match, commitTitleL: commit.title }), null, 2);
+
   if (!match) {
     return null;
   }
 
   const number = parseInt(match[1], 10);
+
+  console.log(JSON.stringify({ number, commitTitleL: commit.title }), null, 2);
 
   if (!number) {
     return null;
@@ -29,6 +33,12 @@ const getCommitPullRequest = async (commit, github) => {
     repo: github.repoDetails.repo,
     number,
   });
+
+  console.log(
+    JSON.stringify({ prData: data, commitTitleL: commit.title }),
+    null,
+    2
+  );
 
   return data;
 };
@@ -57,6 +67,12 @@ const groupByLabels = async (commits, github) => {
 
   for (const commit of commits) {
     const pullRequest = await getCommitPullRequest(commit, github);
+
+    console.log(
+      JSON.stringify({ commitTitle: commit.title, pullRequest }),
+      null,
+      2
+    );
 
     if (pullRequest) {
       const section = getSectionForPullRequest(pullRequest);
