@@ -88,6 +88,26 @@ export function Mail(props: IconProps) {
   );
 }
 
+export function Back(props: IconProps) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={props.width || '24'}
+      height={props.width || '21'}
+      fill="none"
+      viewBox="0 0 24 21"
+      className={props.className}
+    >
+      <path
+        fill={props.color || '#F4F4F4'}
+        fillRule="evenodd"
+        d="M19.636 21C22.046 21 24 19.29 24 17.182V3.818C24 1.71 22.046 0 19.636 0H4.364C1.954 0 0 1.71 0 3.818v13.364C0 19.29 1.954 21 4.364 21h15.272zM4.364 19.09h15.272c1.205 0 2.182-.854 2.182-1.908V3.818c0-1.054-.977-1.909-2.182-1.909H4.364c-1.205 0-2.182.855-2.182 1.91v13.363c0 1.054.977 1.909 2.182 1.909zm6.037-4.54l1.542-1.35-1.994-1.745h8.222v-1.91H9.949L11.943 7.8l-1.542-1.35-4.629 4.05 4.629 4.05z"
+        clipRule="evenodd"
+      ></path>
+    </svg>
+  );
+}
+
 export default function Icon(props: IconProps) {
   switch (props.name) {
     case 'home':
@@ -106,6 +126,8 @@ export default function Icon(props: IconProps) {
       return <Github {...props} />;
     case 'linked-in':
       return <LinkedIn {...props} />;
+    case 'back':
+      return <Back {...props} />;
     default:
       return <Home {...props} />;
   }
