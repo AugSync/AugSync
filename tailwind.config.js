@@ -30,11 +30,15 @@ module.exports = {
       },
     },
     fontSize: {
-      sm: '16px',
-      base: '25px',
-      lg: '31,25px',
-      xl: '39,06px',
-      '2xl': '48,83px',
+      sm: '1rem',
+      base: '1.563rem',
+      lg: '1.953rem',
+      xl: '2.441rem',
+      '2xl': '3.052rem',
+    },
+    fontFamily: {
+      play: ['Play'],
+      ubuntu: ['Ubuntu'],
     },
     extend: {
       colors,

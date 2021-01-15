@@ -1,23 +1,41 @@
 @tailwind base;
-
-/* Write your own custom base styles here */
-
-/* Start purging... */
 @tailwind components;
-/* Stop purging. */
+@tailwind utilities;
+@tailwind screens;
 
 html,
 body {
-  @apply bg-gray-50 dark:bg-gray-900;
+  @apply bg-green dark:bg-gray-900;
+  font-size: 50%;
 }
 
-/* Write your own custom component styles here */
-.btn-blue {
-  @apply px-4 py-2 font-bold text-white bg-blue-500 rounded;
+@screen sm {
+  html,
+  body {
+    font-size: 50%;
+  }
 }
 
-/* Start purging... */
-@tailwind utilities;
-/* Stop purging. */
+@screen sm {
+  html,
+  body {
+    font-size: 75%;
+  }
+}
 
-/* Your own custom utilities */
+@screen lg {
+  html,
+  body {
+    font-size: 100%;
+  }
+}
+
+@font-face {
+  font-family: 'Play';
+  src: url('/fonts/Play/Play-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  src: url('/fonts/Ubuntu/Ubuntu-Regular.ttf');
+}
