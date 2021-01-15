@@ -126,6 +126,8 @@ const buildChangelog = (sections, authors) => {
     text += '\n';
   }
 
+  console.log(JSON.stringify({ authors, size: authors.size }), null, 2);
+
   if (authors.size > 0) {
     text += '### Credits \n\n';
     text += 'Huge thanks to ';
