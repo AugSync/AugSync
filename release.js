@@ -30,6 +30,13 @@ const getCommitPullRequest = async (commit, github) => {
     number,
   });
 
+  console.log({
+    commitTitle: commit.title,
+    match,
+    prNumber: number,
+    prData: number,
+  });
+
   return data;
 };
 
