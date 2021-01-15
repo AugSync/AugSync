@@ -30,6 +30,22 @@ body {
   }
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #42c2b3;
+  border-radius: 10px;
+}
+
 @font-face {
   font-family: 'Play';
   src: url('/fonts/play/Play-Regular.ttf');
