@@ -80,7 +80,9 @@ const CommandLineRender = (props: { values: cmdProps[] }) => {
           let i = 0;
           const typeWriter = () => {
             if (i < title.length) {
-              const element = document.getElementById(`${type}-${currentPage}-${idx}`);
+              const element = document.getElementById(
+                `${type}-${currentPage}-${idx}`
+              );
               if (element) {
                 element.innerHTML += title.charAt(i);
                 i++;
@@ -101,18 +103,16 @@ const CommandLineRender = (props: { values: cmdProps[] }) => {
 
   useEffect(() => {
     (async () => {
-      if (currentPage) {
-        let index = 0;
-        for (const value of props.values) {
-          try {
-            await startTyping(value, index);
-            commandLineRef.current.scrollIntoView({ behavior: 'smooth' });
-            index++;
-          } catch (error) {}
-        }
+      let index = 0;
+      for (const value of props.values) {
+        try {
+          await startTyping(value, index);
+          commandLineRef.current.scrollIntoView({ behavior: 'smooth' });
+          index++;
+        } catch (error) {}
       }
     })();
-  }, [props.values, currentPage]);
+  }, [currentPage]);
 
   useEffect(() => {
     setCurrentPage(router.pathname);
