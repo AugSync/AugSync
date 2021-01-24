@@ -1,12 +1,16 @@
 {
   "name": "augsync",
-  "version": "0.0.0-canary.3",
+  "version": "0.0.0-canary.7",
   "description": "Personal web page",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "version:pre": "release pre --skip-questions",
+    "version:patch": "release patch --skip-questions",
+    "version:minor": "release minor --skip-questions",
+    "version:major": "release major --skip-questions"
   },
   "dependencies": {
     "clsx": "^1.1.1",

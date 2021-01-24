@@ -5,7 +5,7 @@
 
 html,
 body {
-  @apply bg-green dark:bg-gray-900;
+  @apply bg-green-light dark:bg-gray-900;
   font-size: 50%;
 }
 
@@ -30,12 +30,28 @@ body {
   }
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #42c2b3;
+  border-radius: 10px;
+}
+
 @font-face {
   font-family: 'Play';
-  src: url('/fonts/Play/Play-Regular.ttf');
+  src: url('/fonts/play/Play-Regular.ttf');
 }
 
 @font-face {
   font-family: 'Ubuntu';
-  src: url('/fonts/Ubuntu/Ubuntu-Regular.ttf');
+  src: url('/fonts/ubuntu/Ubuntu-Regular.ttf');
 }
