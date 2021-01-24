@@ -4,8 +4,10 @@ module.exports = {
   purge: [
     './src/components/**/*.{js,ts,jsx,tsx}',
     './src/pages/**/*.{js,ts,jsx,tsx}',
+    './src/views/**/*.{js,ts,jsx,tsx}',
+    './src/assets/**/*.{js,ts,jsx,tsx}',
   ],
-  darkMode: 'class',
+  darkMode: 'media', // 'media' or 'class'
   theme: {
     colors: {
       blue: {
