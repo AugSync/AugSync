@@ -1,5 +1,4 @@
 import Icon from 'assets/icons';
-import { Facebook } from 'assets/socialMediaIcons';
 
 export default function SocialMediaBar() {
   return (
