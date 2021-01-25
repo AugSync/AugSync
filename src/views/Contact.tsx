@@ -25,6 +25,9 @@ export default function Contact() {
           className="z-10"
         />
       </div>
+      <h1 className="font-play text-blue my-10 text-center text-xl">
+        Contact Me
+      </h1>
     </>
   );
 }
