@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import { useSpring, animated } from 'react-spring';
 import { useRouter } from 'next/router';
 import clsx from 'clsx';
+import useMeasure from './useMeasure';
 
 interface cmdProps {
   type?: string;
@@ -48,7 +50,10 @@ const Output = (props: cmdProps) => (
   />
 );
 
-const CommandLineRender = (props: { values: cmdProps[] }) => {
+const CommandLineRender = (props: {
+  values: cmdProps[];
+  setIsDisconnect: (state: boolean) => void;
+}) => {
   const router = useRouter();
   const [currentPage, setCurrentPage] = useState<string>();
 
@@ -113,11 +118,13 @@ const CommandLineRender = (props: { values: cmdProps[] }) => {
   }, [currentPage]);
 
   useEffect(() => {
+    if (router.pathname !== currentPage) props.setIsDisconnect(true);
+
     setCurrentPage(router.pathname);
   }, [router.pathname]);
 
   return (
-    <div className="container p-10 m-auto">
+    <div className="container px-10 pt-10 pb-16 m-auto">
       {currentPage &&
         props.values.map(({ type, title, color }, idx) => {
           switch (type) {
@@ -158,12 +165,20 @@ const CommandLineRender = (props: { values: cmdProps[] }) => {
 };
 
 export default function CommandLine(props: { values: cmdProps[] }) {
+  const [bind, { height }, setIsDisconnect]: any = useMeasure();
+  const commandStyle = useSpring({ height });
+
   return (
-    <div
-      className="bg-green pt-3 pb-10 overflow-x-auto"
-      style={{ minHeight: '30rem' }}
+    <animated.div
+      style={commandStyle}
+      className="bg-green overflow-hidden"
     >
-      <CommandLineRender values={props.values} />
-    </div>
+      <div {...bind} className="inline-block">
+        <CommandLineRender
+          values={props.values}
+          setIsDisconnect={setIsDisconnect}
+        />
+      </div>
+    </animated.div>
   );
 }
