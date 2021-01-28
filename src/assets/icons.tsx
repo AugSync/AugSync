@@ -108,6 +108,46 @@ export function Back(props: IconProps) {
   );
 }
 
+function Flag(props: IconProps) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={props.width || '24'}
+      height={props.width || '24'}
+      fill="none"
+      viewBox="0 0 24 24"
+      className={props.className}
+    >
+      <path
+        fill={props.color || '#F4F4F4'}
+        fillRule="evenodd"
+        d="M0 24h3V10.667h9v2.666h12V2.667H13.5V0H0v24zM12 2.667H3V8h10.5v2.667H21V5.333h-9V2.667z"
+        clipRule="evenodd"
+      ></path>
+    </svg>
+  );
+}
+
+function Face(props: IconProps) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={props.width || '24'}
+      height={props.width || '24'}
+      fill="none"
+      viewBox="0 0 24 24"
+      className={props.className}
+    >
+      <path
+        fill={props.color || '#F4F4F4'}
+        fillRule="evenodd"
+        d="M12 24c6.627 0 12-5.373 12-12S18.627 0 12 0 0 5.373 0 12s5.373 12 12 12zm0-2.4a9.6 9.6 0 009.6-9.6A9.6 9.6 0 0012 2.4 9.6 9.6 0 002.4 12a9.6 9.6 0 009.6 9.6zM8.4 10.8a1.2 1.2 0 100-2.4 1.2 1.2 0 000 2.4zm8.4 2.4a4.8 4.8 0 01-9.6 0h9.6zm-1.2-2.4a1.2 1.2 0 100-2.4 1.2 1.2 0 000 2.4z"
+        clipRule="evenodd"
+      ></path>
+    </svg>
+  );
+}
+
 export default function Icon(props: IconProps) {
   switch (props.name) {
     case 'home':
@@ -128,6 +168,10 @@ export default function Icon(props: IconProps) {
       return <LinkedIn {...props} />;
     case 'back':
       return <Back {...props} />;
+    case 'flag':
+      return <Flag {...props} />;
+    case 'face':
+      return <Face {...props} />;
     default:
       return <Home {...props} />;
   }

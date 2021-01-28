@@ -51,7 +51,6 @@ const Output = (props: cmdProps) => (
 const CommandLineRender = (props: { values: cmdProps[] }) => {
   const router = useRouter();
   const [currentPage, setCurrentPage] = useState<string>();
-  const commandLineRef = React.useRef(null);
 
   function startTyping(value: cmdProps, idx: number) {
     return new Promise((resolve, reject) => {
@@ -107,7 +106,6 @@ const CommandLineRender = (props: { values: cmdProps[] }) => {
       for (const value of props.values) {
         try {
           await startTyping(value, index);
-          commandLineRef.current.scrollIntoView({ behavior: 'smooth' });
           index++;
         } catch (error) {}
       }
@@ -155,7 +153,6 @@ const CommandLineRender = (props: { values: cmdProps[] }) => {
               return <HomePwd idx={idx} key={idx} currentPage={currentPage} />;
           }
         })}
-      <div ref={commandLineRef} />
     </div>
   );
 };
@@ -164,7 +161,7 @@ export default function CommandLine(props: { values: cmdProps[] }) {
   return (
     <div
       className="bg-green pt-3 pb-10 overflow-x-auto"
-      style={{ height: '30rem' }}
+      style={{ minHeight: '30rem' }}
     >
       <CommandLineRender values={props.values} />
     </div>

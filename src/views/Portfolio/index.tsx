@@ -7,6 +7,9 @@ export default function Portfolio() {
     <>
       <Header />
       <CommandLine values={commandLineValues} />
+      <h1 className="font-play text-orange-dark my-10 text-center text-xl">
+        Projects
+      </h1>
     </>
   );
 }

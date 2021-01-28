@@ -42,10 +42,19 @@ module.exports = {
       play: ['Play'],
       ubuntu: ['Ubuntu'],
     },
+    boxShadow: {
+      '2xl': '20px 20px 40px 0px #1D1D1D',
+    },
     extend: {
       colors,
     },
   },
-  variants: {},
+  variants: {
+    extend: {
+      ringWidth: ['hover'],
+      zIndex: ['hover'],
+      boxShadow: ['hover'],
+    },
+  },
   plugins: [],
 };
