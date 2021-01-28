@@ -23,7 +23,7 @@ export default function ProjectPreview({
 }: ProjectPreviewProps) {
   return (
     <Link href="/">
-      <a className="bg-green-dark w-6/12 h-96 relative ring-blue-light hover:ring-4 z-0 hover:z-10 hover:shadow-2xl">
+      <a className="transition bg-green-dark w-6/12 h-96 relative ring-blue-light hover:ring-4 z-0 hover:z-10 hover:shadow-2xl">
         <Image
           src={image}
           alt={altImage}
