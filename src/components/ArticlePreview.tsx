@@ -6,29 +6,24 @@ interface ProjectPreviewProps {
   title: string;
   description: string;
   date: string;
-  languajes: string;
+  lang: string;
   reactions: number;
   image: string;
   altImage: string;
-  heightType?: string;
 }
 
 export default function ProjectPreview({
   title,
   description,
   date,
-  languajes,
+  lang,
   reactions,
   image,
   altImage,
-  heightType,
 }: ProjectPreviewProps) {
   return (
     <Link href="/">
-      <a
-        className="flex-auto transition bg-green-dark w-4/12 relative ring-blue-light hover:ring-4 z-0 hover:z-10 hover:shadow-2xl"
-        style={{ height: heightType === 'full' ? '48rem' : '24rem' }}
-      >
+      <a className="transition bg-green-dark w-6/12 h-96 relative ring-blue-light hover:ring-4 z-0 hover:z-10 hover:shadow-2xl">
         <Image
           src={image}
           alt={altImage}
@@ -38,9 +33,8 @@ export default function ProjectPreview({
         />
         <div className="w-auto h-12 absolute top-4 right-4 flex justify-between">
           <div className="bg-green-dark flex justify-between items-center h-auto w-auto p-4">
-            <p className="text-white text-base font-ubuntu ml-2">
-              {languajes}
-            </p>
+            <Icon name="flag" />
+            <p className="text-white text-base font-ubuntu ml-2">{lang}</p>
           </div>
           <div className="bg-orange-light flex justify-between items-center h-auto w-auto p-4 ml-2">
             <Icon name="face" />
