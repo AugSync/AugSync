@@ -1,6 +1,11 @@
+/* eslint-disable react/no-array-index-key */
+/* eslint-disable no-plusplus */
+/* eslint-disable no-console */
 import React, { useState, useEffect } from 'react';
+import { useSpring, animated } from 'react-spring';
 import { useRouter } from 'next/router';
 import clsx from 'clsx';
+import useMeasure from './useMeasure';
 
 interface cmdProps {
   type?: string;
@@ -11,49 +16,63 @@ interface cmdProps {
   currentPage?: string;
 }
 
-const HomePwd = (props: cmdProps) => (
+const HomePwd = ({
+  /*  type,
+  title,
+  color,
+  isResponse, */
+  idx,
+  currentPage,
+}: cmdProps) => (
   <span
-    className="text-base sm:text-xl xl:text-2xl text-white font-play leading-3"
-    id={`home-${props.currentPage}-${props.idx}`}
+    className="text-base text-white sm:text-xl xl:text-2xl font-play leading-3"
+    id={`home-${currentPage}-${idx}`}
   />
 );
-const Folder = (props: cmdProps) => (
+const Folder = ({ currentPage, color, idx }: cmdProps) => (
   <span
     className={clsx(
       'text-base sm:text-xl xl:text-2xl  font-play leading-3',
-      props.color || 'text-orange-light'
+      color || 'text-orange-light'
     )}
-    id={`folder-${props.currentPage}-${props.idx}`}
+    id={`folder-${currentPage}-${idx}`}
   />
 );
-const Split = (props: cmdProps) => (
+const Split = ({ currentPage, idx }: cmdProps) => (
   <span
-    className="text-base sm:text-xl xl:text-2xl text-white font-play leading-3"
-    id={`split-${props.currentPage}-${props.idx}`}
+    className="text-base text-white sm:text-xl xl:text-2xl font-play leading-3"
+    id={`split-${currentPage}-${idx}`}
   />
 );
-const CmdInput = (props: cmdProps) => (
+const CmdInput = ({ currentPage, idx }: cmdProps) => (
   <span
-    className="text-base sm:text-xl xl:text-2xl text-white font-play mx-2 leading-3"
-    id={`input-${props.currentPage}-${props.idx}`}
+    className="mx-2 text-base text-white sm:text-xl xl:text-2xl font-play leading-3"
+    id={`input-${currentPage}-${idx}`}
   />
 );
-const Output = (props: cmdProps) => (
+const Output = ({ currentPage, color, idx }: cmdProps) => (
   <span
     className={clsx(
       'text-base sm:text-xl xl:text-2xl  font-play leading-tight',
-      props.color || 'text-white'
+      color || 'text-white'
     )}
-    id={`output-${props.currentPage}-${props.idx}`}
+    id={`output-${currentPage}-${idx}`}
   />
 );
 
-const CommandLineRender = (props: { values: cmdProps[] }) => {
+const CommandLineRender = ({
+  values,
+  setIsDisconnect,
+}: {
+  values: cmdProps[];
+  // eslint-disable-next-line no-unused-vars
+  setIsDisconnect: (state: boolean) => void;
+}) => {
   const router = useRouter();
   const [currentPage, setCurrentPage] = useState<string>();
-  const commandLineRef = React.useRef(null);
 
   function startTyping(value: cmdProps, idx: number) {
+    // eslint-disable-next-line consistent-return
     return new Promise((resolve, reject) => {
       const { type, title, isResponse } = value;
       const speed = 50;
@@ -73,7 +92,7 @@ const CommandLineRender = (props: { values: cmdProps[] }) => {
               return resolve('');
             }
 
-            return reject('');
+            return reject(new Error('Unexpected'));
           }
 
           // write text with timeout
@@ -88,40 +107,45 @@ const CommandLineRender = (props: { values: cmdProps[] }) => {
                 i++;
                 setTimeout(typeWriter, speed);
               } else {
-                reject('');
+                reject(new Error('Unexpected'));
               }
             } else resolve('');
           };
 
           typeWriter();
         } catch (error) {
-          console.log({ error });
+          return console.error(error);
         }
-      } else resolve('');
+      } else return resolve('');
     });
   }
 
   useEffect(() => {
     (async () => {
       let index = 0;
-      for (const value of props.values) {
+      // eslint-disable-next-line no-restricted-syntax
+      for (const value of values) {
         try {
+          // eslint-disable-next-line no-await-in-loop
           await startTyping(value, index);
-          commandLineRef.current.scrollIntoView({ behavior: 'smooth' });
           index++;
-        } catch (error) {}
+        } catch (error) {
+          console.error(error);
+        }
       }
     })();
   }, [currentPage]);
 
   useEffect(() => {
+    if (router.pathname !== currentPage) setIsDisconnect(true);
+
     setCurrentPage(router.pathname);
   }, [router.pathname]);
 
   return (
-    <div className="container p-10 m-auto">
+    <div className="container px-10 pt-10 pb-16 m-auto">
       {currentPage &&
-        props.values.map(({ type, title, color }, idx) => {
+        values.map(({ type, title, color }, idx) => {
           switch (type) {
             case 'home':
               return <HomePwd idx={idx} key={idx} currentPage={currentPage} />;
@@ -155,18 +179,19 @@ const CommandLineRender = (props: { values: cmdProps[] }) => {
               return <HomePwd idx={idx} key={idx} currentPage={currentPage} />;
           }
         })}
-      <div ref={commandLineRef} />
     </div>
   );
 };
 
-export default function CommandLine(props: { values: cmdProps[] }) {
+export default function CommandLine({ values }: { values: cmdProps[] }) {
+  const [bind, { height }, setIsDisconnect]: any = useMeasure();
+  const commandStyle = useSpring({ height });
+
   return (
-    <div
-      className="bg-green pt-3 pb-10 overflow-x-auto"
-      style={{ height: '30rem' }}
-    >
-      <CommandLineRender values={props.values} />
-    </div>
+    <animated.div style={commandStyle} className="overflow-hidden bg-green">
+      <div {...bind} className="inline-block">
+        <CommandLineRender values={values} setIsDisconnect={setIsDisconnect} />
+      </div>
+    </animated.div>
   );
 }

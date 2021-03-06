@@ -1,7 +1,8 @@
 import Icon from 'assets/icons';
 import clsx from 'clsx';
-import React from 'react';
 import { useRouter } from 'next/router';
+// eslint-disable-next-line no-use-before-define
+import React from 'react';
 
 export default React.forwardRef(function LinkButton(
   props: {
@@ -12,6 +13,7 @@ export default React.forwardRef(function LinkButton(
     href?: string;
     activeByRoute?: boolean;
     iconWith?: string;
+    // eslint-disable-next-line react/no-unused-prop-types
     iconHeight?: string;
   },
   ref: any
@@ -41,7 +43,7 @@ export default React.forwardRef(function LinkButton(
     >
       <Icon
         name={props.icon}
-        className="mr-2 w-10"
+        className="w-10 mr-2"
         width={props.iconWith || '1.5rem'}
       />
       {props.title}

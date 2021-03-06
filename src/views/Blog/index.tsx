@@ -7,6 +7,9 @@ export default function Blog() {
     <>
       <Header />
       <CommandLine values={commandLineValues} />
+      <h1 className="my-10 text-xl text-center font-play text-orange-dark">
+        Articles
+      </h1>
     </>
   );
 }
