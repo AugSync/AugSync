@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import Icon from 'assets/icons';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -23,7 +24,7 @@ export default function ProjectPreview({
 }: ProjectPreviewProps) {
   return (
     <Link href="/">
-      <a className="transition bg-green-dark w-6/12 h-96 relative ring-blue-light hover:ring-4 z-0 hover:z-10 hover:shadow-2xl">
+      <a className="relative z-0 w-6/12 transition bg-green-dark h-96 ring-blue-light hover:ring-4 hover:z-10 hover:shadow-2xl">
         <Image
           src={image}
           alt={altImage}
@@ -31,20 +32,20 @@ export default function ProjectPreview({
           objectFit="cover"
           className="z-0"
         />
-        <div className="w-auto h-12 absolute top-4 right-4 flex justify-between">
-          <div className="bg-green-dark flex justify-between items-center h-auto w-auto p-4">
+        <div className="absolute flex justify-between w-auto h-12 top-4 right-4">
+          <div className="flex items-center justify-between w-auto h-auto p-4 bg-green-dark">
             <Icon name="flag" />
-            <p className="text-white text-base font-ubuntu ml-2">{lang}</p>
+            <p className="ml-2 text-base text-white font-ubuntu">{lang}</p>
           </div>
-          <div className="bg-orange-light flex justify-between items-center h-auto w-auto p-4 ml-2">
+          <div className="flex items-center justify-between w-auto h-auto p-4 ml-2 bg-orange-light">
             <Icon name="face" />
-            <p className="text-white text-base font-ubuntu ml-2">{reactions}</p>
+            <p className="ml-2 text-base text-white font-ubuntu">{reactions}</p>
           </div>
         </div>
-        <div className="bg-green-dark bg-opacity-80 w-full absolute bottom-0 left-0 right-0 p-5">
-          <h2 className="text-blue text-xl font-play">{title}</h2>
-          <p className="text-orange text-base font-ubuntu">{description}</p>
-          <p className="text-white text-sm font-ubuntu mt-2">{date}</p>
+        <div className="absolute bottom-0 left-0 right-0 w-full p-5 bg-green-dark bg-opacity-80">
+          <h2 className="text-xl text-blue font-play">{title}</h2>
+          <p className="text-base text-orange font-ubuntu">{description}</p>
+          <p className="mt-2 text-sm text-white font-ubuntu">{date}</p>
         </div>
       </a>
     </Link>

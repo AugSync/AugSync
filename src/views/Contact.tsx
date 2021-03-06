@@ -1,3 +1,4 @@
+/* eslint-disable react/button-has-type */
 import { useRouter } from 'next/router';
 import Header from 'components/Header';
 import Image from 'next/image';
@@ -11,10 +12,10 @@ export default function Contact() {
       <Header />
       <div className="relative w-full" style={{ height: '30rem' }}>
         <button
-          className="bg-orange-dark absolute z-20 text-white font-ubuntu text-base px-4 py-2 flex justify-center items-center top-7 left-7"
+          className="absolute z-20 flex items-center justify-center px-4 py-2 text-base text-white bg-orange-dark font-ubuntu top-7 left-7"
           onClick={() => router.back()}
         >
-          <Icon name="back" className="mr-2 w-10" width="1.5rem" />
+          <Icon name="back" className="w-10 mr-2" width="1.5rem" />
           Back
         </button>
         <Image
@@ -25,7 +26,7 @@ export default function Contact() {
           className="z-10"
         />
       </div>
-      <h1 className="font-play text-blue my-10 text-center text-xl">
+      <h1 className="my-10 text-xl text-center font-play text-blue">
         Contact Me
       </h1>
     </>
