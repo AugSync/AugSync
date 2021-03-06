@@ -5,8 +5,8 @@ import Link from 'next/link';
 export default function Header() {
   return (
     <header className="bg-green-dark">
-      <nav className="container px-4 m-auto flex justify-between">
-        <div className="flex justify-center items-center">
+      <nav className="container flex justify-between px-4 m-auto">
+        <div className="flex items-center justify-center">
           <Link href="/" passHref>
             <LinkButton icon="home" title="Home" activeByRoute />
           </Link>

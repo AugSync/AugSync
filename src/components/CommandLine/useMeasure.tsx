@@ -11,6 +11,7 @@ export default function useMeasure() {
   useEffect(() => {
     ro.observe(ref.current);
 
+    // eslint-disable-next-line no-unused-expressions
     if (isDisconnect) ro.disconnect;
   }, [isDisconnect]);
   return [{ ref }, bounds, setIsDisconnect];
