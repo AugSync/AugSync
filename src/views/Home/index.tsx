@@ -55,7 +55,7 @@ export default function Home() {
         Most Liked Projects
       </h1>
       <div
-        className="relative flex flex-col flex-wrap mb-5"
+        className="relative flex flex-col flex-wrap"
         style={{ maxHeight: 1600 }}
       >
         <ProjectPreview
