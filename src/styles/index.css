@@ -3,13 +3,21 @@
 @tailwind utilities;
 @tailwind screens;
 
-/* Add the lines below */
-@layer utilities {
-  @variants responsive {
-    .masonry {
-      columns: 6 200px;
-      column-gap: 1rem;
-    }
+@layer base {
+  .my-masonry-grid {
+    display: -webkit-box; /* Not needed if autoprefixing */
+    display: -ms-flexbox; /* Not needed if autoprefixing */
+    display: flex;
+    width: auto;
+  }
+  .my-masonry-grid_column {
+    background-clip: padding-box;
+  }
+
+  /* Style your items */
+  .my-masonry-grid_column > div {
+    /* change div to reference your elements you put in <Masonry> */
+    background: grey;
   }
 }
 
