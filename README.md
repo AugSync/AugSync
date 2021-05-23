@@ -6,8 +6,6 @@ I was born in Venezuela 🌄. I am 20 years old 👶. 6 years ago I started in t
 
 👽 I keep my knowledge updated at [Platzi](https://platzi.com/p/AugSync/), where I have 31 certifications so far.
 
-![César Augusto's github stats](https://github-readme-stats.vercel.app/api?username=AugSync&show_icons=true&theme=onedark)
-
 #### **Social Media Profiles**
 
 <a href="https://platzi.com/p/AugSync/">
@@ -46,5 +44,3 @@ I was born in Venezuela 🌄. I am 20 years old 👶. 6 years ago I started in t
 ![GitHub](https://img.shields.io/badge/-GitHub-181717?style=flat-square&logo=github&logoColor=white)
 ![Heroku](https://img.shields.io/badge/-Heroku-purple?style=flat-square&logo=heroku&logoColor=white)
 ![Vercel](https://img.shields.io/badge/-Vercel-181717?style=flat-square&logo=vercel&logoColor=white)
-
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=augsync&layout=compact)](https://github.com/augsync/github-readme-stats)
