@@ -1,6 +1,7 @@
 /* eslint-disable react/button-has-type */
 import { useRouter } from 'next/router';
 import Header from 'components/Header';
+import Footer from 'components/Footer';
 import Image from 'next/image';
 import Icon from 'assets/icons';
 
@@ -29,6 +30,7 @@ export default function Contact() {
       <h1 className="my-10 text-xl text-center font-play text-blue">
         Contact Me
       </h1>
+      <Footer />
     </>
   );
 }

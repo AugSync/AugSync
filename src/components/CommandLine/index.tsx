@@ -129,9 +129,8 @@ const CommandLineRender = ({
           // eslint-disable-next-line no-await-in-loop
           await startTyping(value, index);
           index++;
-        } catch (error) {
-          console.error(error);
-        }
+          // eslint-disable-next-line no-empty
+        } catch (error) {}
       }
     })();
   }, [currentPage]);
