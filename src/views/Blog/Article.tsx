@@ -9,7 +9,7 @@ export default function Article() {
     <>
       <Header />
       <Hero />
-      <h1 className="my-10 text-xl text-center font-play text-orange-dark">
+      <h1 className="my-10 text-xl text-center font-play text-blue">
         This is a article
       </h1>
       <Footer />
