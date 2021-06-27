@@ -24,7 +24,7 @@ export default function ProjectPreview({
 }: ProjectPreviewProps) {
   return (
     <div>
-      <Link href="/">
+      <Link href="/blog/example">
         <a className="relative z-0 block w-full transition bg-green-dark h-96 ring-blue-light hover:ring-4 hover:z-10 hover:shadow-2xl">
           <Image
             src={image}
