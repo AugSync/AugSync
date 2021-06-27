@@ -71,6 +71,7 @@ const CommandLineRender = ({
   const router = useRouter();
   const [currentPage, setCurrentPage] = useState<string>();
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   function startTyping(value: cmdProps, idx: number) {
     // eslint-disable-next-line consistent-return
     return new Promise((resolve, reject) => {
@@ -133,13 +134,13 @@ const CommandLineRender = ({
         } catch (error) {}
       }
     })();
-  }, [currentPage]);
+  }, [currentPage, startTyping, values]);
 
   useEffect(() => {
     if (router.pathname !== currentPage) setIsDisconnect(true);
 
     setCurrentPage(router.pathname);
-  }, [router.pathname]);
+  }, [currentPage, router.pathname, setIsDisconnect]);
 
   return (
     <div className="container px-10 pt-10 pb-16 m-auto">

@@ -13,6 +13,6 @@ export default function useMeasure() {
 
     // eslint-disable-next-line no-unused-expressions
     if (isDisconnect) ro.disconnect;
-  }, [isDisconnect]);
+  }, [isDisconnect, ro]);
   return [{ ref }, bounds, setIsDisconnect];
 }
