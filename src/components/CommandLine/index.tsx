@@ -133,12 +133,14 @@ const CommandLineRender = ({
         } catch (error) {}
       }
     })();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentPage]);
 
   useEffect(() => {
     if (router.pathname !== currentPage) setIsDisconnect(true);
 
     setCurrentPage(router.pathname);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [router.pathname]);
 
   return (

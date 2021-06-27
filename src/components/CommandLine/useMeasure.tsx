@@ -13,6 +13,7 @@ export default function useMeasure() {
 
     // eslint-disable-next-line no-unused-expressions
     if (isDisconnect) ro.disconnect;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isDisconnect]);
   return [{ ref }, bounds, setIsDisconnect];
 }
