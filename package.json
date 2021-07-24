@@ -8,6 +8,10 @@
     "build": "next build",
     "start": "next start",
     "format": "prettier --config ./.prettierrc.json --write **/*.tsx",
+    "version:pre": "release pre --skip-questions",
+    "version:patch": "release patch --skip-questions",
+    "version:minor": "release minor --skip-questions",
+    "version:major": "release major --skip-questions",
     "lint": "next lint"
   },
   "dependencies": {
