@@ -1,4 +1,3 @@
-/* eslint-disable react/button-has-type */
 import Image from 'next/image';
 import React from 'react';
 import Icon from 'assets/icons';

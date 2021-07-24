@@ -1,7 +1,6 @@
 import Icon from 'assets/icons';
 import clsx from 'clsx';
 import { useRouter } from 'next/router';
-// eslint-disable-next-line no-use-before-define
 import React from 'react';
 
 export default React.forwardRef(function LinkButton(
@@ -13,7 +12,6 @@ export default React.forwardRef(function LinkButton(
     href?: string;
     activeByRoute?: boolean;
     iconWith?: string;
-    // eslint-disable-next-line react/no-unused-prop-types
     iconHeight?: string;
   },
   ref: any
