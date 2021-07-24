@@ -1,6 +1,3 @@
-/* eslint-disable react/no-array-index-key */
-/* eslint-disable no-plusplus */
-/* eslint-disable no-console */
 import React, { useState, useEffect } from 'react';
 import { useSpring, animated } from 'react-spring';
 import { useRouter } from 'next/router';
@@ -16,14 +13,7 @@ interface cmdProps {
   currentPage?: string;
 }
 
-const HomePwd = ({
-  /*  type,
-  title,
-  color,
-  isResponse, */
-  idx,
-  currentPage,
-}: cmdProps) => (
+const HomePwd = ({ idx, currentPage }: cmdProps) => (
   <span
     className="text-base text-white sm:text-xl xl:text-2xl font-play leading-3"
     id={`home-${currentPage}-${idx}`}
@@ -65,14 +55,12 @@ const CommandLineRender = ({
   setIsDisconnect,
 }: {
   values: cmdProps[];
-  // eslint-disable-next-line no-unused-vars
   setIsDisconnect: (state: boolean) => void;
 }) => {
   const router = useRouter();
   const [currentPage, setCurrentPage] = useState<string>();
 
   function startTyping(value: cmdProps, idx: number) {
-    // eslint-disable-next-line consistent-return
     return new Promise((resolve, reject) => {
       const { type, title, isResponse } = value;
       const speed = 50;
@@ -123,13 +111,10 @@ const CommandLineRender = ({
   useEffect(() => {
     (async () => {
       let index = 0;
-      // eslint-disable-next-line no-restricted-syntax
       for (const value of values) {
         try {
-          // eslint-disable-next-line no-await-in-loop
           await startTyping(value, index);
           index++;
-          // eslint-disable-next-line no-empty
         } catch (error) {}
       }
     })();

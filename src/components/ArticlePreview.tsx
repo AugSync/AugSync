@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import Icon from 'assets/icons';
 import Image from 'next/image';
 import Link from 'next/link';
