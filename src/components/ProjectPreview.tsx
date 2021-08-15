@@ -37,9 +37,9 @@ export default function ProjectPreview({
             objectFit="cover"
             className="z-0"
           />
-          <div className="absolute flex justify-between w-auto h-12 top-4 right-4">
-            <PoweredByBadge languages={languages} />
-            <ReactionsBadge reactions={reactions} />
+          <div className="absolute flex justify-between w-auto top-4 right-4">
+            <PoweredByBadge languages={languages} containerStyle="py-2" />
+            <ReactionsBadge reactions={reactions} containerStyle="py-2" />
           </div>
           <div className="absolute bottom-0 left-0 right-0 w-full p-5 bg-green-dark bg-opacity-80">
             <h2 className="text-xl text-blue font-play">{title}</h2>

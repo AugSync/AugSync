@@ -1,7 +1,20 @@
-export default function PoweredByBadge({ languages }: { languages: string }) {
+import clsx from 'clsx';
+
+export default function PoweredByBadge({
+  languages,
+  containerStyle,
+}: {
+  languages: string;
+  containerStyle?: string;
+}) {
   return (
-    <div className="flex items-center justify-between w-auto h-auto p-4 bg-green-dark">
-      <p className="ml-2 text-base text-white font-ubuntu">{languages}</p>
+    <div
+      className={clsx(
+        'flex items-center justify-between w-auto h-auto px-3 bg-green-dark',
+        containerStyle
+      )}
+    >
+      <p className="text-base text-white font-ubuntu">{languages}</p>
     </div>
   );
 }
