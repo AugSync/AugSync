@@ -1,6 +1,6 @@
-import Icon from 'assets/icons';
 import Image from 'next/image';
 import Link from 'next/link';
+import { LangBadge, ReactionsBadge } from 'components/Badges';
 
 interface ProjectPreviewProps {
   title: string;
@@ -32,17 +32,9 @@ export default function ProjectPreview({
             objectFit="cover"
             className="z-0"
           />
-          <div className="absolute flex justify-between w-auto h-12 top-4 right-4">
-            <div className="flex items-center justify-between w-auto h-auto p-4 bg-green-dark">
-              <Icon name="flag" />
-              <p className="ml-2 text-base text-white font-ubuntu">{lang}</p>
-            </div>
-            <div className="flex items-center justify-between w-auto h-auto p-4 ml-2 bg-orange-light">
-              <Icon name="face" />
-              <p className="ml-2 text-base text-white font-ubuntu">
-                {reactions}
-              </p>
-            </div>
+          <div className="absolute flex justify-between w-auto top-4 right-4">
+            <LangBadge lang={lang} containerStyle="py-2" />
+            <ReactionsBadge reactions={reactions} containerStyle="py-2" />
           </div>
           <div className="absolute bottom-0 left-0 right-0 w-full p-5 bg-green-dark bg-opacity-80">
             <h2 className="text-xl text-blue font-play">{title}</h2>

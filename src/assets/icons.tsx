@@ -108,6 +108,25 @@ export function Back(props: IconProps) {
   );
 }
 
+export function Play(props: IconProps) {
+  return (
+    <svg
+      width="40"
+      height="40"
+      viewBox="0 0 40 40"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        fill={props.color || '#C2862F'}
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M7.27273 3.63636H32.7273C34.7356 3.63636 36.3636 5.26442 36.3636 7.27273V32.7273C36.3636 34.7356 34.7356 36.3636 32.7273 36.3636H7.27273C5.26442 36.3636 3.63636 34.7356 3.63636 32.7273V7.27273C3.63636 5.26442 5.26442 3.63636 7.27273 3.63636ZM0 7.27273C0 3.25611 3.25611 0 7.27273 0H32.7273C36.7438 0 40 3.25611 40 7.27273V32.7273C40 36.7438 36.7438 40 32.7273 40H7.27273C3.25611 40 0 36.7438 0 32.7273V7.27273ZM16.3635 27.8729L27.2726 20L16.3635 12.127V27.8729Z"
+      />
+    </svg>
+  );
+}
+
 function Flag(props: IconProps) {
   return (
     <svg
@@ -168,6 +187,8 @@ export default function Icon(props: IconProps) {
       return <LinkedIn {...props} />;
     case 'back':
       return <Back {...props} />;
+    case 'play':
+      return <Play {...props} />;
     case 'flag':
       return <Flag {...props} />;
     case 'face':

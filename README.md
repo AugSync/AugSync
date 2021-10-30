@@ -4,13 +4,8 @@
 
 I was born in Venezuela 🌄. I am 20 years old 👶. 6 years ago I started in the world of web development. It is something that I am passionate about, and that fascinates me to dedicate myself daily.
 
-👽 I keep my knowledge updated at [Platzi](https://platzi.com/p/AugSync/), where I have 31 certifications so far.
-
 #### **Social Media Profiles**
 
-<a href="https://platzi.com/p/AugSync/">
-    <img width="72" src="https://upload.wikimedia.org/wikipedia/commons/3/32/Platzi.jpg" />
-</a>
 <a href="https://twitter.com/AugSync">
     <img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white" />
 </a>
