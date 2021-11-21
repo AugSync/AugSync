@@ -8,8 +8,7 @@
     "build": "next build",
     "start": "next start",
     "format": "prettier --config ./.prettierrc.json --write **/*.tsx",
-    "release": "standard-changelog",
-    "release:pre": "standard-changelog --prerelease",
+    "release": "release-it",
     "lint": "next lint"
   },
   "dependencies": {
@@ -38,6 +37,7 @@
     "eslint-plugin-tailwind": "^0.2.1",
     "postcss": "^8.2.4",
     "prettier": "^2.2.1",
+    "release-it": "^14.11.8",
     "standard-changelog": "^2.0.27",
     "tailwindcss": "^2.0.2",
     "typescript-eslint": "^0.0.1-alpha.0",
