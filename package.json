@@ -8,6 +8,7 @@
     "build": "next build",
     "start": "next start",
     "format": "prettier --config ./.prettierrc.json --write **/*.tsx",
+    "release": "standard-changelog",
     "release:pre": "standard-changelog --prerelease",
     "lint": "next lint"
   },
