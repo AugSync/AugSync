@@ -37,6 +37,7 @@
     "eslint-plugin-tailwind": "^0.2.1",
     "postcss": "^8.2.4",
     "prettier": "^2.2.1",
+    "standard-changelog": "^2.0.27",
     "tailwindcss": "^2.0.2",
     "typescript-eslint": "^0.0.1-alpha.0",
     "typescript-xwind-plugin": "^0.7.0"
