@@ -1,3 +1,10 @@
+## [0.0.0-canary.4](https://github.com/AugSync/AugSync/compare/0.0.0-canary.3...0.0.0-canary.4) (2021-11-22)
+
+
+### Features
+
+* MarkDown implemented ([b808d22](https://github.com/AugSync/AugSync/commit/b808d2236e003cfc467bf38b383077a57ad981d0))
+
 ## [0.0.0-canary.3](https://github.com/AugSync/AugSync/compare/0.0.0-canary.2...0.0.0-canary.3) (2021-11-22)
 
 
