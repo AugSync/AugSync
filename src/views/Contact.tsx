@@ -1,3 +1,4 @@
+/* eslint-disable tailwind/class-order */
 import Header from 'components/Header';
 import Footer from 'components/Footer';
 import React from 'react';
@@ -26,7 +27,7 @@ export default function Contact() {
             <p className="ml-4 mr-6 text-lg font-play text-blue-light">
               Facebook
             </p>
-            <Icon name="linked-in" className="text-white fill-current" />
+            <Icon name="linked-in" className="fill-current text-white" />
             <p className="ml-4 text-lg text-white font-play">LinkedIn</p>
           </div>
         </div>
