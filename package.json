@@ -9,6 +9,7 @@
     "start": "next start",
     "format": "prettier --config ./.prettierrc.json --write **/*.tsx",
     "release": "dotenv release-it",
+    "release:pre": "dotenv release-it --preRelease",
     "lint": "next lint"
   },
   "dependencies": {
