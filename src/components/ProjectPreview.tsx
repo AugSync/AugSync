@@ -25,7 +25,7 @@ export default function ProjectPreview({
 }: ProjectPreviewProps) {
   return (
     <div>
-      <Link href="/">
+      <Link href="/portfolio/example">
         <a
           className="relative z-0 flex-auto block w-full transition bg-green-dark ring-blue-light hover:ring-4 hover:z-10 hover:shadow-2xl"
           style={{ height: heightType === 'full' ? '48rem' : '24rem' }}

@@ -1,7 +1,7 @@
-import Article from 'views/Blog/Article';
+import Project from 'views/Blog/Project';
 
 export default function Post({ markDown }: { markDown: string }) {
-  return <Article markDown={markDown} />;
+  return <Project markDown={markDown} />;
 }
 
 export async function getStaticPaths() {
