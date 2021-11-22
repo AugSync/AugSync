@@ -1,3 +1,10 @@
+## [0.0.0-canary.6](https://github.com/AugSync/AugSync/compare/0.0.0-canary.5...0.0.0-canary.6) (2021-11-22)
+
+
+### Features
+
+* Add project structure and conact me ([8f06df7](https://github.com/AugSync/AugSync/commit/8f06df726b566bbe41eb54310a4761d8c5c289f2))
+
 ## [0.0.0-canary.5](https://github.com/AugSync/AugSync/compare/0.0.0-canary.4...0.0.0-canary.5) (2021-11-22)
 
 ## [0.0.0-canary.4](https://github.com/AugSync/AugSync/compare/0.0.0-canary.3...0.0.0-canary.4) (2021-11-22)
