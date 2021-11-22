@@ -1,3 +1,10 @@
+## [0.0.0-canary.7](https://github.com/AugSync/AugSync/compare/0.0.0-canary.6...0.0.0-canary.7) (2021-11-22)
+
+
+### Bug Fixes
+
+* Fix import key position on tailwind file ([c0d3ddc](https://github.com/AugSync/AugSync/commit/c0d3ddc1db017f1f229e322575de569dcb6f1739))
+
 ## [0.0.0-canary.6](https://github.com/AugSync/AugSync/compare/0.0.0-canary.5...0.0.0-canary.6) (2021-11-22)
 
 
