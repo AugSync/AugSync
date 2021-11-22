@@ -1,3 +1,10 @@
+## [0.0.0-canary.3](https://github.com/AugSync/AugSync/compare/0.0.0-canary.2...0.0.0-canary.3) (2021-11-22)
+
+
+### Bug Fixes
+
+* Fix pre release command ([03359af](https://github.com/AugSync/AugSync/commit/03359af0b34aa08d6ca1e81f12c7baaa43b19ff0))
+
 ## [0.0.0-canary.2](https://github.com/AugSync/AugSync/compare/0.0.0-canary.1...0.0.0-canary.2) (2021-11-22)
 
 
