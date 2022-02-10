@@ -2,6 +2,7 @@ import ArticlePreview from 'components/ArticlePreview';
 import CommandLine from 'components/CommandLine';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
+import Paginator from 'components/Paginator';
 import Masonry from 'react-masonry-css';
 import Search from 'components/Search';
 import Select from 'components/Select';
@@ -71,6 +72,7 @@ export default function Blog() {
           altImage="nextjs image"
         />
       </Masonry>
+      <Paginator />
       <Footer />
     </>
   );

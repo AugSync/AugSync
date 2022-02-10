@@ -67,6 +67,7 @@ module.exports = {
       ringWidth: ['hover'],
       zIndex: ['hover'],
       boxShadow: ['hover, responsive'],
+      padding: ['hover'],
     },
   },
   plugins: [],

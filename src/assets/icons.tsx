@@ -175,6 +175,48 @@ function Face(props: IconProps) {
   );
 }
 
+function ArrowLeft(props: IconProps) {
+  return (
+    <svg
+      width={props.width || '30'}
+      height={props.width || '30'}
+      viewBox="0 0 30 30"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={props.className}
+    >
+      <path
+        fill={props.color || '#C2862F'}
+        className={props.className}
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M4.39341 4.39341C-1.46447 10.2513 -1.46447 19.7488 4.39341 25.6067C10.2513 31.4644 19.7488 31.4644 25.6067 25.6067C31.4644 19.7488 31.4644 10.2513 25.6067 4.39341C19.7488 -1.46447 10.2513 -1.46447 4.39341 4.39341ZM6.32188 6.32188C1.52907 11.1147 1.52907 18.8853 6.32188 23.6782C11.1147 28.471 18.8853 28.471 23.6782 23.6782C28.471 18.8853 28.471 11.1147 23.6782 6.32188C18.8853 1.52907 11.1147 1.52907 6.32188 6.32188ZM13.0008 20.7855L14.9293 18.857L12.4359 16.3636H22.7139V13.6364H12.4359L14.9293 11.1431L13.0008 9.21462L7.21533 15L13.0008 20.7855Z"
+      />
+    </svg>
+  );
+}
+
+function ArrowRight(props: IconProps) {
+  return (
+    <svg
+      width={props.width || '30'}
+      height={props.width || '30'}
+      viewBox="0 0 30 30"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={props.className}
+    >
+      <path
+        fill={props.color || '#C2862F'}
+        className={props.className}
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M25.6067 4.39341C31.4644 10.2513 31.4644 19.7487 25.6067 25.6067C19.7487 31.4644 10.2513 31.4644 4.39341 25.6067C-1.46447 19.7487 -1.46447 10.2513 4.39341 4.39341C10.2513 -1.46447 19.7487 -1.46447 25.6067 4.39341ZM23.6782 6.32188C28.471 11.1147 28.471 18.8853 23.6782 23.6782C18.8853 28.471 11.1147 28.471 6.32188 23.6782C1.52907 18.8853 1.52907 11.1147 6.32188 6.32188C11.1147 1.52907 18.8853 1.52907 23.6782 6.32188ZM16.9993 20.7855L15.0709 18.857L17.5641 16.3636H7.28627V13.6363H17.5643L15.0709 11.1431L16.9993 9.2146L22.7848 15L16.9993 20.7855Z"
+      />
+    </svg>
+  );
+}
+
 export default function Icon(props: IconProps) {
   switch (props.name) {
     case 'home':
@@ -201,6 +243,10 @@ export default function Icon(props: IconProps) {
       return <Flag {...props} />;
     case 'face':
       return <Face {...props} />;
+    case 'arrow-left':
+      return <ArrowLeft {...props} />;
+    case 'arrow-right':
+      return <ArrowRight {...props} />;
     default:
       return <Home {...props} />;
   }
