@@ -1,6 +1,7 @@
 import CommandLine from 'components/CommandLine';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
+import Paginator from 'components/Paginator';
 import Masonry from 'react-masonry-css';
 import ProjectPreview from 'components/ProjectPreview';
 import Search from 'components/Search';
@@ -122,6 +123,7 @@ export default function Portfolio() {
           altImage="nextjs image"
         />
       </Masonry>
+      <Paginator />
       <Footer />
     </>
   );

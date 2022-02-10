@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export default function Paginator() {
   return (
-    <div className="flex items-center justify-center m-16">
+    <div className="flex items-center justify-center my-10">
       <Link href="/blog">
         <a>
           <Icon name="arrow-left" className="m-2" />
