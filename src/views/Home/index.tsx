@@ -5,8 +5,9 @@ import ArticlePreview from 'components/ArticlePreview';
 import ProjectPreview from 'components/ProjectPreview';
 import Masonry from 'react-masonry-css';
 import commandLineValues from './home-command-line-values';
+import { IAllArticles } from 'lib/dato-cms-service';
 
-export default function Home() {
+export default function Home({ allArticles }: { allArticles: IAllArticles }) {
   return (
     <>
       <Header />
@@ -21,42 +22,18 @@ export default function Home() {
         className="my-masonry-grid"
         columnClassName="my-masonry-grid_column"
       >
-        <ArticlePreview
-          title="Init project with Nextjs"
-          description="Next its a open source project that find to help to many developers"
-          date="10/12/2021"
-          lang="English"
-          reactions={24}
-          image="/images/next.png"
-          altImage="nextjs image"
-        />
-        <ArticlePreview
-          title="Init project with Postgres"
-          description="Next its a open source project that find to help to many developers"
-          date="10/12/2021"
-          lang="English"
-          reactions={500}
-          image="/images/postgres.jpg"
-          altImage="nextjs image"
-        />
-        <ArticlePreview
-          title="Init project with Nextjs"
-          description="Next its a open source project that find to help to many developers"
-          date="10/12/2021"
-          lang="English"
-          reactions={24}
-          image="/images/postgres.jpg"
-          altImage="nextjs image"
-        />
-        <ArticlePreview
-          title="Init project with Nextjs"
-          description="Next its a open source project that find to help to many developers"
-          date="10/12/2021"
-          lang="English"
-          reactions={24}
-          image="/images/next.png"
-          altImage="nextjs image"
-        />
+        {allArticles.map((article) => (
+          <ArticlePreview
+            key={article.id}
+            title={article.title}
+            description={article.seo.description}
+            date={article._createdAt}
+            langs={article._allContentLocales}
+            /* reactions={24} */
+            image={article.openGraph.url}
+            altImage={article.openGraph.alt}
+          />
+        ))}
       </Masonry>
       <h1 className="my-10 text-2xl text-center font-play text-orange-dark">
         Most Liked Projects

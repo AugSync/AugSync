@@ -39,8 +39,12 @@ export default function Blog() {
           title="Init project with Nextjs"
           description="Next its a open source project that find to help to many developers"
           date="10/12/2021"
-          lang="English"
-          reactions={24}
+          langs={[
+            {
+              locale: 'es',
+            },
+          ]}
+          /* reactions={24} */
           image="/images/next.png"
           altImage="nextjs image"
         />
@@ -48,8 +52,12 @@ export default function Blog() {
           title="Init project with Postgres"
           description="Next its a open source project that find to help to many developers"
           date="10/12/2021"
-          lang="English"
-          reactions={500}
+          langs={[
+            {
+              locale: 'es',
+            },
+          ]}
+          /* reactions={500} */
           image="/images/postgres.jpg"
           altImage="nextjs image"
         />
@@ -57,8 +65,12 @@ export default function Blog() {
           title="Init project with Nextjs"
           description="Next its a open source project that find to help to many developers"
           date="10/12/2021"
-          lang="English"
-          reactions={24}
+          langs={[
+            {
+              locale: 'es',
+            },
+          ]}
+          /* reactions={24} */
           image="/images/postgres.jpg"
           altImage="nextjs image"
         />
@@ -66,8 +78,12 @@ export default function Blog() {
           title="Init project with Nextjs"
           description="Next its a open source project that find to help to many developers"
           date="10/12/2021"
-          lang="English"
-          reactions={24}
+          langs={[
+            {
+              locale: 'es',
+            },
+          ]}
+          /* reactions={24} */
           image="/images/next.png"
           altImage="nextjs image"
         />
