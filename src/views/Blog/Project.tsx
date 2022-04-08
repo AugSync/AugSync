@@ -13,7 +13,7 @@ export default function Project({ markDown }: { markDown: string }) {
   return (
     <>
       <Header />
-      <Hero />
+      <Hero url="/images/contact.jpg" alt="Person contacting to anybody" />
       <article className="m-10">
         <h1 className="text-2xl text-left font-play text-blue">
           This is a Project

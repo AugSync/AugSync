@@ -3,7 +3,7 @@ import React from 'react';
 import Icon from 'assets/icons';
 import { useRouter } from 'next/router';
 
-export default function Hero() {
+export default function Hero({ url, alt }: { url: string; alt: string }) {
   const router = useRouter();
 
   return (
@@ -16,8 +16,8 @@ export default function Hero() {
         Back
       </button>
       <Image
-        src="/images/contact.jpg"
-        alt="Person contacting to anybody"
+        src={url}
+        alt={alt}
         layout="fill"
         objectFit="cover"
         className="z-10"

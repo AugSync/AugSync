@@ -23,16 +23,7 @@ export default function Home({ allArticles }: { allArticles: IAllArticles }) {
         columnClassName="my-masonry-grid_column"
       >
         {allArticles.map((article) => (
-          <ArticlePreview
-            key={article.id}
-            title={article.title}
-            description={article.seo.description}
-            date={article._createdAt}
-            langs={article._allContentLocales}
-            /* reactions={24} */
-            image={article.openGraph.url}
-            altImage={article.openGraph.alt}
-          />
+          <ArticlePreview key={article.id} article={article} />
         ))}
       </Masonry>
       <h1 className="my-10 text-2xl text-center font-play text-orange-dark">

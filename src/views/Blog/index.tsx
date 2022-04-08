@@ -7,8 +7,9 @@ import Masonry from 'react-masonry-css';
 import Search from 'components/Search';
 import Select from 'components/Select';
 import commandLineValues from './blog-command-line-values';
+import { IAllArticles } from 'lib/dato-cms-service';
 
-export default function Blog() {
+export default function Blog({ allArticles }: { allArticles: IAllArticles }) {
   return (
     <>
       <Header />
@@ -35,58 +36,9 @@ export default function Blog() {
         className="my-masonry-grid"
         columnClassName="my-masonry-grid_column"
       >
-        <ArticlePreview
-          title="Init project with Nextjs"
-          description="Next its a open source project that find to help to many developers"
-          date="10/12/2021"
-          langs={[
-            {
-              locale: 'es',
-            },
-          ]}
-          /* reactions={24} */
-          image="/images/next.png"
-          altImage="nextjs image"
-        />
-        <ArticlePreview
-          title="Init project with Postgres"
-          description="Next its a open source project that find to help to many developers"
-          date="10/12/2021"
-          langs={[
-            {
-              locale: 'es',
-            },
-          ]}
-          /* reactions={500} */
-          image="/images/postgres.jpg"
-          altImage="nextjs image"
-        />
-        <ArticlePreview
-          title="Init project with Nextjs"
-          description="Next its a open source project that find to help to many developers"
-          date="10/12/2021"
-          langs={[
-            {
-              locale: 'es',
-            },
-          ]}
-          /* reactions={24} */
-          image="/images/postgres.jpg"
-          altImage="nextjs image"
-        />
-        <ArticlePreview
-          title="Init project with Nextjs"
-          description="Next its a open source project that find to help to many developers"
-          date="10/12/2021"
-          langs={[
-            {
-              locale: 'es',
-            },
-          ]}
-          /* reactions={24} */
-          image="/images/next.png"
-          altImage="nextjs image"
-        />
+        {allArticles.map((article) => (
+          <ArticlePreview key={article.id} article={article} />
+        ))}
       </Masonry>
       <Paginator />
       <Footer />

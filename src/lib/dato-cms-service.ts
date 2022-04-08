@@ -8,9 +8,16 @@ export type IMakeRequest = {
 
 export type IArticle = {
   id: string;
+  slug: string;
   _createdAt: string;
   title: string;
+  content: string;
   seo: ISeo;
+  seoTags: IAttribute[];
+  tags: {
+    id: string;
+    title: string;
+  }[];
   openGraph: IOpenGraph;
   _allContentLocales: ILang[];
 };
@@ -31,6 +38,26 @@ export type ISeo = {
 };
 
 export type IAllArticles = IArticle[];
+
+export type IPageSeo = {
+  title: string;
+  seo: IAttribute[];
+};
+
+export type ISite = {
+  favicon: IAttribute[];
+};
+
+export type IAttribute = {
+  attributes: {
+    sizes: string;
+    type: string;
+    rel: string;
+    href: string;
+  };
+  content: null;
+  tag: string;
+};
 
 export async function makeRequest({ query, variables, preview }: IMakeRequest) {
   let endpoint = 'https://graphql.datocms.com';

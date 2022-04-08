@@ -9,7 +9,7 @@ export default function Contact() {
   return (
     <>
       <Header />
-      <Hero />
+      <Hero url="/images/contact.jpg" alt="Person contacting to anybody" />
       <h1 className="mt-10 text-xl text-center font-play text-blue">
         Contact Me
       </h1>
