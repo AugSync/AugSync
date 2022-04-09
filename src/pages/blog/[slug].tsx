@@ -1,4 +1,5 @@
 import { IArticle, ISite, makeRequest } from 'lib/dato-cms-service';
+import { metaTagsFragment, responsiveImageFragment } from 'lib/graph-fragments';
 import Error from 'next/error';
 import Head from 'next/head';
 import { renderMetaTags } from 'react-datocms';
@@ -42,9 +43,7 @@ export async function getStaticProps({ params }) {
       query PostBySlug($slug: String) {
         site: _site {
           favicon: faviconMetaTags {
-            attributes
-            content
-            tag
+            ...metaTagsFragment
           }
         }
         article(filter: {slug: {eq: $slug}}) {
@@ -57,6 +56,9 @@ export async function getStaticProps({ params }) {
           openGraph {
             url
             alt
+            responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 1920, h: 1080 }) {
+              ...responsiveImageFragment
+            }
           }
           _allContentLocales {
             locale
@@ -72,6 +74,9 @@ export async function getStaticProps({ params }) {
           }
         }
       }
+
+      ${metaTagsFragment}
+      ${responsiveImageFragment}
     `,
     variables: {
       slug: params.slug,

@@ -12,7 +12,10 @@ export default function Project({ project }: { project: IProject }) {
   return (
     <>
       <Header />
-      <Hero url={project.openGraph.url} alt={project.openGraph.alt} />
+      <Hero
+        alt={project.openGraph.alt}
+        responsiveImage={project.openGraph.responsiveImage}
+      />
       <article className="w-4/5 m-10">
         <h1 className="text-2xl text-left font-play text-blue">
           {project.title}

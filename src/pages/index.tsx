@@ -8,7 +8,7 @@ import {
   IAllProjects,
 } from 'lib/dato-cms-service';
 import Head from 'next/head';
-import { metaTagsFragment } from 'lib/graph-fragments';
+import { metaTagsFragment, responsiveImageFragment } from 'lib/graph-fragments';
 
 export async function getStaticProps() {
   const graphqlRequest = {
@@ -38,6 +38,9 @@ export async function getStaticProps() {
             id
             url
             alt
+            responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 800, h: 400 }) {
+              ...responsiveImageFragment
+            }
           }
           _allContentLocales {
             locale
@@ -56,6 +59,9 @@ export async function getStaticProps() {
             id
             url
             alt
+            responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 800, h: 400 }) {
+              ...responsiveImageFragment
+            }
           }
           tags {
             id
@@ -68,6 +74,7 @@ export async function getStaticProps() {
       }
 
       ${metaTagsFragment}
+      ${responsiveImageFragment}
     `,
   };
 

@@ -12,7 +12,10 @@ export default function Article({ article }: { article: IArticle }) {
   return (
     <>
       <Header />
-      <Hero url={article.openGraph.url} alt={article.openGraph.alt} />
+      <Hero
+        alt={article.openGraph.alt}
+        responsiveImage={article.openGraph.responsiveImage}
+      />
       <article className="w-4/5 m-10">
         <h1 className="text-2xl text-left font-play text-blue">
           {article.title}

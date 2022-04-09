@@ -4,7 +4,7 @@ import {
   ISite,
   makeRequest,
 } from 'lib/dato-cms-service';
-import { metaTagsFragment } from 'lib/graph-fragments';
+import { metaTagsFragment, responsiveImageFragment } from 'lib/graph-fragments';
 import Head from 'next/head';
 import { renderMetaTags } from 'react-datocms';
 import Portfolio from 'views/Portfolio';
@@ -37,6 +37,9 @@ export async function getStaticProps() {
             id
             url
             alt
+            responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 800, h: 400 }) {
+              ...responsiveImageFragment
+            }
           }
           tags {
             id
@@ -49,6 +52,7 @@ export async function getStaticProps() {
       }
 
       ${metaTagsFragment}
+      ${responsiveImageFragment}
     `,
   };
 

@@ -1,10 +1,11 @@
+/* eslint-disable jsx-a11y/alt-text */
 import Link from 'next/link';
 import { PoweredByBadge } from 'components/Badges';
 import { IProject, ITag } from 'lib/dato-cms-service';
 import { capitalize, truncate } from 'lodash';
 import { format } from 'date-fns';
 import { es } from 'date-fns/locale';
-import Image from 'next/image';
+import { Image } from 'react-datocms';
 
 interface ProjectPreviewProps {
   project: IProject;
@@ -21,11 +22,12 @@ export default function ProjectPreview({ project }: ProjectPreviewProps) {
           }}
         >
           <Image
-            src={project.openGraph.url}
-            alt={project.openGraph.alt}
-            layout="fill"
-            objectFit="cover"
-            className="z-0"
+            data={{
+              ...project.openGraph.responsiveImage,
+              alt: `Cover Image for ${project.title}`,
+            }}
+            className="w-full h-full"
+            pictureStyle={{ objectFit: 'cover' }}
           />
           <div className="absolute flex flex-wrap justify-end w-auto top-4 right-4">
             {project.tags.map((tag: ITag) => (

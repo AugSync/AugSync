@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 import Link from 'next/link';
 import { LangBadge /* , ReactionsBadge */ } from 'components/Badges';
 import { IArticle } from 'lib/dato-cms-service';
@@ -5,7 +6,8 @@ import { getLang } from 'utils';
 import { format } from 'date-fns';
 import { es } from 'date-fns/locale';
 import { capitalize } from 'lodash';
-import Image from 'next/image';
+import { Image } from 'react-datocms';
+
 interface ProjectPreviewProps {
   article: IArticle;
 }
@@ -16,12 +18,14 @@ export default function ProjectPreview({ article }: ProjectPreviewProps) {
       <Link href={`/blog/${article.slug}`}>
         <a className="relative z-0 block w-full transition bg-green-dark h-96 ring-blue-light hover:ring-4 hover:z-10 hover:shadow-2xl">
           <Image
-            src={article.openGraph.url}
-            alt={article.openGraph.alt}
-            layout="fill"
-            objectFit="cover"
-            className="z-0"
+            data={{
+              ...article.openGraph.responsiveImage,
+              alt: `Cover Image for ${article.title}`,
+            }}
+            className="w-full h-full"
+            pictureStyle={{ objectFit: 'cover' }}
           />
+
           <div className="absolute flex justify-between w-auto top-4 right-4">
             {article._allContentLocales.map((lang) => (
               <LangBadge
