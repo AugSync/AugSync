@@ -1,5 +1,5 @@
 import Home from 'views/Home';
-import { renderMetaTags, useQuerySubscription } from 'react-datocms';
+import { renderMetaTags } from 'react-datocms';
 import {
   makeRequest,
   IAllArticles,
@@ -8,6 +8,7 @@ import {
   IAllProjects,
 } from 'lib/dato-cms-service';
 import Head from 'next/head';
+import { metaTagsFragment } from 'lib/graph-fragments';
 
 export async function getStaticProps() {
   const graphqlRequest = {
@@ -16,16 +17,12 @@ export async function getStaticProps() {
         home {
           title
           seo: _seoMetaTags {
-            attributes
-            content
-            tag
+            ...metaTagsFragment
           }
         }
         site: _site {
           favicon: faviconMetaTags {
-            attributes
-            content
-            tag
+            ...metaTagsFragment
           }
         }
         allArticles(first: 10) {
@@ -69,6 +66,8 @@ export async function getStaticProps() {
           }
         }
       }
+
+      ${metaTagsFragment}
     `,
   };
 
@@ -101,7 +100,7 @@ export default function HomePage({ subscription }) {
       site: ISite;
       home: IPageSeo;
     };
-  } = useQuerySubscription(subscription);
+  } = { data: subscription.initialData };
 
   const metaTags = home.seo.concat(site.favicon);
 

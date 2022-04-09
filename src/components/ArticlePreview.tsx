@@ -1,12 +1,11 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import { LangBadge /* , ReactionsBadge */ } from 'components/Badges';
-import { IArticle, ILang } from 'lib/dato-cms-service';
+import { IArticle } from 'lib/dato-cms-service';
 import { getLang } from 'utils';
 import { format } from 'date-fns';
 import { es } from 'date-fns/locale';
 import { capitalize } from 'lodash';
-
+import Image from 'next/image';
 interface ProjectPreviewProps {
   article: IArticle;
 }

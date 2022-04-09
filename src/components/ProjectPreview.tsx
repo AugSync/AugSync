@@ -1,10 +1,10 @@
-import Image from 'next/image';
 import Link from 'next/link';
-import { PoweredByBadge, ReactionsBadge } from 'components/Badges';
+import { PoweredByBadge } from 'components/Badges';
 import { IProject, ITag } from 'lib/dato-cms-service';
-import { capitalize, takeRight, truncate } from 'lodash';
+import { capitalize, truncate } from 'lodash';
 import { format } from 'date-fns';
 import { es } from 'date-fns/locale';
+import Image from 'next/image';
 
 interface ProjectPreviewProps {
   project: IProject;

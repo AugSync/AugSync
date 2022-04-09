@@ -1,7 +1,7 @@
 import { IArticle, ISite, makeRequest } from 'lib/dato-cms-service';
 import Error from 'next/error';
 import Head from 'next/head';
-import { renderMetaTags, useQuerySubscription } from 'react-datocms';
+import { renderMetaTags } from 'react-datocms';
 import Article from 'views/Blog/Article';
 
 export default function Post({ subscription }) {
@@ -9,7 +9,7 @@ export default function Post({ subscription }) {
     data: { article, site },
   }: {
     data: { article: IArticle; site: ISite };
-  } = useQuerySubscription(subscription);
+  } = { data: subscription.initialData };
 
   if (article === null) {
     return <Error statusCode={404} />;

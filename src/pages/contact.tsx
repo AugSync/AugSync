@@ -1,6 +1,7 @@
 import { IPageSeo, ISite, makeRequest } from 'lib/dato-cms-service';
+import { metaTagsFragment } from 'lib/graph-fragments';
 import Head from 'next/head';
-import { renderMetaTags, useQuerySubscription } from 'react-datocms';
+import { renderMetaTags } from 'react-datocms';
 import Contact from 'views/Contact';
 
 export async function getStaticProps() {
@@ -10,27 +11,27 @@ export async function getStaticProps() {
         contact {
           title
           seo: _seoMetaTags {
-            attributes
-            content
-            tag
+            ...metaTagsFragment
           }
         }
         site: _site {
           favicon: faviconMetaTags {
-            attributes
-            content
-            tag
+            ...metaTagsFragment
           }
         }
       }
+
+      ${metaTagsFragment}
     `,
   };
+
+  const initialData = await makeRequest(graphqlRequest);
 
   return {
     props: {
       subscription: {
         enabled: false,
-        initialData: await makeRequest(graphqlRequest),
+        initialData,
       },
     },
     revalidate: 3600,
@@ -42,7 +43,7 @@ export default function ContactPage({ subscription }) {
     data: { site, contact },
   }: {
     data: { site: ISite; contact: IPageSeo };
-  } = useQuerySubscription(subscription);
+  } = { data: subscription.initialData };
 
   const metaTags = contact.seo.concat(site.favicon);
 

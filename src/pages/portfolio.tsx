@@ -4,8 +4,9 @@ import {
   ISite,
   makeRequest,
 } from 'lib/dato-cms-service';
+import { metaTagsFragment } from 'lib/graph-fragments';
 import Head from 'next/head';
-import { renderMetaTags, useQuerySubscription } from 'react-datocms';
+import { renderMetaTags } from 'react-datocms';
 import Portfolio from 'views/Portfolio';
 
 export async function getStaticProps() {
@@ -15,16 +16,12 @@ export async function getStaticProps() {
         portfolio {
           title
           seo: _seoMetaTags {
-            attributes
-            content
-            tag
+            ...metaTagsFragment
           }
         }
         site: _site {
           favicon: faviconMetaTags {
-            attributes
-            content
-            tag
+            ...metaTagsFragment
           }
         }
         allProjects {
@@ -50,6 +47,8 @@ export async function getStaticProps() {
           }
         }
       }
+
+      ${metaTagsFragment}
     `,
   };
 
@@ -77,7 +76,7 @@ export default function PortfolioPage({ subscription }) {
     data: { site, portfolio, allProjects },
   }: {
     data: { site: ISite; portfolio: IPageSeo; allProjects: IAllProjects };
-  } = useQuerySubscription(subscription);
+  } = { data: subscription.initialData };
 
   const metaTags = portfolio.seo.concat(site.favicon);
 

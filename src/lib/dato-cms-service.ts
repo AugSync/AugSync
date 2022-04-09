@@ -1,4 +1,5 @@
 import tiny from 'tiny-json-http';
+import { IResponsiveImage } from './graph-fragments';
 
 export type IMakeRequest = {
   query: string;
@@ -48,6 +49,7 @@ export type IOpenGraph = {
   id: string;
   url: string;
   alt: string;
+  responsiveImage: IResponsiveImage;
 };
 
 export type ISeo = {

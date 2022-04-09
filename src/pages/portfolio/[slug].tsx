@@ -6,7 +6,7 @@ import {
 } from 'lib/dato-cms-service';
 import Error from 'next/error';
 import Head from 'next/head';
-import { renderMetaTags, useQuerySubscription } from 'react-datocms';
+import { renderMetaTags } from 'react-datocms';
 import Project from 'views/Portfolio/Project';
 
 export default function ProjectView({ subscription }) {
@@ -14,7 +14,7 @@ export default function ProjectView({ subscription }) {
     data: { project, site },
   }: {
     data: { project: IProject; site: ISite };
-  } = useQuerySubscription(subscription);
+  } = { data: subscription.initialData };
 
   if (project === null) {
     return <Error statusCode={404} />;

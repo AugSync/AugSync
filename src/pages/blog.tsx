@@ -4,8 +4,9 @@ import {
   ISite,
   makeRequest,
 } from 'lib/dato-cms-service';
+import { metaTagsFragment } from 'lib/graph-fragments';
 import Head from 'next/head';
-import { renderMetaTags, useQuerySubscription } from 'react-datocms';
+import { renderMetaTags } from 'react-datocms';
 import Blog from 'views/Blog';
 
 export async function getStaticProps() {
@@ -15,16 +16,12 @@ export async function getStaticProps() {
         blog {
           title
           seo: _seoMetaTags {
-            attributes
-            content
-            tag
+            ...metaTagsFragment
           }
         }
         site: _site {
           favicon: faviconMetaTags {
-            attributes
-            content
-            tag
+            ...metaTagsFragment
           }
         }
         allArticles {
@@ -46,6 +43,8 @@ export async function getStaticProps() {
           }
         }
       }
+
+      ${metaTagsFragment}
     `,
   };
 
@@ -65,7 +64,7 @@ export default function BlogPage({ subscription }) {
     data: { allArticles, site, blog },
   }: {
     data: { allArticles: IAllArticles; site: ISite; blog: IPageSeo };
-  } = useQuerySubscription(subscription);
+  } = { data: subscription.initialData };
 
   const metaTags = blog.seo.concat(site.favicon);
 
