@@ -7,8 +7,13 @@ import ProjectPreview from 'components/ProjectPreview';
 import Search from 'components/Search';
 import Select from 'components/Select';
 import commandLineValues from './portfolio-command-line-values';
+import { IAllProjects } from 'lib/dato-cms-service';
 
-export default function Portfolio() {
+export default function Portfolio({
+  allProjects,
+}: {
+  allProjects: IAllProjects;
+}) {
   return (
     <>
       <Header />
@@ -36,92 +41,9 @@ export default function Portfolio() {
         className="my-masonry-grid"
         columnClassName="my-masonry-grid_column"
       >
-        <ProjectPreview
-          title="Init project with Mysql"
-          description="Next its a open source project that find to help to many developers"
-          date="10/12/2021"
-          languages="javascript, React"
-          reactions={24}
-          image="/images/next.png"
-          altImage="nextjs image"
-          heightType="full"
-        />
-        <ProjectPreview
-          title="Init project with Mysql"
-          description="Next its a open source project that find to help to many developers"
-          date="10/12/2021"
-          languages="javascript, React"
-          reactions={24}
-          image="/images/postgres.jpg"
-          altImage="nextjs image"
-        />
-        <ProjectPreview
-          title="Init project with Mysql"
-          description="Next its a open source project that find to help to many developers"
-          date="10/12/2021"
-          languages="javascript, React"
-          reactions={500}
-          image="/images/postgres.jpg"
-          altImage="nextjs image"
-          heightType="full"
-        />
-        <ProjectPreview
-          title="Init project with Mysql"
-          description="Next its a open source project that find to help to many developers"
-          date="10/12/2021"
-          languages="javascript, React"
-          reactions={24}
-          image="/images/postgres.jpg"
-          altImage="nextjs image"
-          heightType="full"
-        />
-        <ProjectPreview
-          title="Init project with Mysql"
-          description="Next its a open source project that find to help to many developers"
-          date="10/12/2021"
-          languages="javascript, React"
-          reactions={500}
-          image="/images/postgres.jpg"
-          altImage="nextjs image"
-          heightType="full"
-        />
-        <ProjectPreview
-          title="Init project with Mysql"
-          description="Next its a open source project that find to help to many developers"
-          date="10/12/2021"
-          languages="javascript, React"
-          reactions={24}
-          image="/images/postgres.jpg"
-          altImage="nextjs image"
-          heightType="full"
-        />
-        <ProjectPreview
-          title="Init project with Mysql"
-          description="Next its a open source project that find to help to many developers"
-          date="10/12/2021"
-          languages="javascript, React"
-          reactions={24}
-          image="/images/postgres.jpg"
-          altImage="nextjs image"
-        />
-        <ProjectPreview
-          title="Init project with Mysql"
-          description="Next its a open source project that find to help to many developers"
-          date="10/12/2021"
-          languages="javascript, React"
-          reactions={24}
-          image="/images/postgres.jpg"
-          altImage="nextjs image"
-        />
-        <ProjectPreview
-          title="Init project with Mysql"
-          description="Next its a open source project that find to help to many developers"
-          date="10/12/2021"
-          languages="javascript, React"
-          reactions={24}
-          image="/images/postgres.jpg"
-          altImage="nextjs image"
-        />
+        {allProjects.map((project) => (
+          <ProjectPreview key={project.id} project={project} />
+        ))}
       </Masonry>
       <Paginator />
       <Footer />

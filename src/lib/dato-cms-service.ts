@@ -14,12 +14,30 @@ export type IArticle = {
   content: string;
   seo: ISeo;
   seoTags: IAttribute[];
-  tags: {
-    id: string;
-    title: string;
-  }[];
+  tags: ITag[];
   openGraph: IOpenGraph;
   _allContentLocales: ILang[];
+};
+
+export type IProject = {
+  id: string;
+  slug: string;
+  _createdAt: string;
+  title: string;
+  content: string;
+  seo: ISeo;
+  seoTags: IAttribute[];
+  tags: ITag[];
+  openGraph: IOpenGraph;
+  _allContentLocales: ILang[];
+  seeInOperationUrl: string;
+  githubUrl: string;
+  isFullHeight: boolean;
+};
+
+export type ITag = {
+  id: string;
+  title: string;
 };
 
 export type ILang = {
@@ -38,6 +56,7 @@ export type ISeo = {
 };
 
 export type IAllArticles = IArticle[];
+export type IAllProjects = IProject[];
 
 export type IPageSeo = {
   title: string;

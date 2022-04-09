@@ -5,9 +5,15 @@ import ArticlePreview from 'components/ArticlePreview';
 import ProjectPreview from 'components/ProjectPreview';
 import Masonry from 'react-masonry-css';
 import commandLineValues from './home-command-line-values';
-import { IAllArticles } from 'lib/dato-cms-service';
+import { IAllArticles, IAllProjects } from 'lib/dato-cms-service';
 
-export default function Home({ allArticles }: { allArticles: IAllArticles }) {
+export default function Home({
+  allArticles,
+  allProjects,
+}: {
+  allArticles: IAllArticles;
+  allProjects: IAllProjects;
+}) {
   return (
     <>
       <Header />
@@ -38,7 +44,10 @@ export default function Home({ allArticles }: { allArticles: IAllArticles }) {
         className="my-masonry-grid"
         columnClassName="my-masonry-grid_column"
       >
-        <ProjectPreview
+        {allProjects.map((project) => (
+          <ProjectPreview key={project.id} project={project} />
+        ))}
+        {/* <ProjectPreview
           title="Init project with Mysql"
           description="Next its a open source project that find to help to many developers"
           date="10/12/2021"
@@ -123,7 +132,7 @@ export default function Home({ allArticles }: { allArticles: IAllArticles }) {
           reactions={24}
           image="/images/postgres.jpg"
           altImage="nextjs image"
-        />
+        /> */}
       </Masonry>
       <Footer />
     </>

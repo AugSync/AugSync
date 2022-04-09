@@ -5,6 +5,7 @@ import {
   IAllArticles,
   ISite,
   IPageSeo,
+  IAllProjects,
 } from 'lib/dato-cms-service';
 import Head from 'next/head';
 
@@ -45,15 +46,45 @@ export async function getStaticProps() {
             locale
           }
         }
+        allProjects(first: 10) {
+          id
+          slug
+          _createdAt
+          title
+          seo {
+            description
+            title
+          }
+          openGraph {
+            id
+            url
+            alt
+          }
+          tags {
+            id
+            title
+          }
+          _allContentLocales {
+            locale
+          }
+        }
       }
     `,
   };
+
+  let initialData = await makeRequest(graphqlRequest);
+
+  initialData.allProjects = initialData.allProjects.map((project) => ({
+    ...project,
+    // Generate random boolean value
+    isFullHeight: Boolean(Math.round(Math.random())),
+  }));
 
   return {
     props: {
       subscription: {
         enabled: false,
-        initialData: await makeRequest(graphqlRequest),
+        initialData,
       },
     },
     revalidate: 3600,
@@ -62,9 +93,14 @@ export async function getStaticProps() {
 
 export default function HomePage({ subscription }) {
   const {
-    data: { allArticles, site, home },
+    data: { allArticles, allProjects, site, home },
   }: {
-    data: { allArticles: IAllArticles; site: ISite; home: IPageSeo };
+    data: {
+      allArticles: IAllArticles;
+      allProjects: IAllProjects;
+      site: ISite;
+      home: IPageSeo;
+    };
   } = useQuerySubscription(subscription);
 
   const metaTags = home.seo.concat(site.favicon);
@@ -72,7 +108,7 @@ export default function HomePage({ subscription }) {
   return (
     <>
       <Head>{renderMetaTags(metaTags)}</Head>
-      <Home allArticles={allArticles} />
+      <Home allArticles={allArticles} allProjects={allProjects} />
     </>
   );
 }

@@ -1,4 +1,9 @@
-import { IPageSeo, ISite, makeRequest } from 'lib/dato-cms-service';
+import {
+  IAllProjects,
+  IPageSeo,
+  ISite,
+  makeRequest,
+} from 'lib/dato-cms-service';
 import Head from 'next/head';
 import { renderMetaTags, useQuerySubscription } from 'react-datocms';
 import Portfolio from 'views/Portfolio';
@@ -22,15 +27,45 @@ export async function getStaticProps() {
             tag
           }
         }
+        allProjects {
+          id
+          slug
+          _createdAt
+          title
+          seo {
+            description
+            title
+          }
+          openGraph {
+            id
+            url
+            alt
+          }
+          tags {
+            id
+            title
+          }
+          _allContentLocales {
+            locale
+          }
+        }
       }
     `,
   };
+
+  let initialData = await makeRequest(graphqlRequest);
+
+  initialData.allProjects = initialData.allProjects.map((project) => ({
+    ...project,
+    // Generate random boolean value
+    isFullHeight: Boolean(Math.round(Math.random())),
+  }));
 
   return {
     props: {
       subscription: {
         enabled: false,
-        initialData: await makeRequest(graphqlRequest),
+        initialData,
       },
     },
     revalidate: 3600,
@@ -39,9 +74,9 @@ export async function getStaticProps() {
 
 export default function PortfolioPage({ subscription }) {
   const {
-    data: { site, portfolio },
+    data: { site, portfolio, allProjects },
   }: {
-    data: { site: ISite; portfolio: IPageSeo };
+    data: { site: ISite; portfolio: IPageSeo; allProjects: IAllProjects };
   } = useQuerySubscription(subscription);
 
   const metaTags = portfolio.seo.concat(site.favicon);
@@ -49,7 +84,7 @@ export default function PortfolioPage({ subscription }) {
   return (
     <>
       <Head>{renderMetaTags(metaTags)}</Head>
-      <Portfolio />
+      <Portfolio allProjects={allProjects} />
     </>
   );
 }
