@@ -19,12 +19,12 @@ export default function Contact() {
       </h2>
       <div className="flex justify-center w-full mb-10">
         <div className="inline-block px-6 py-4 mt-4 bg-green">
-          <div className="flex items-center">
+          <div className="flex flex-col items-center sm:flex-row">
             <Link href="https://github.com/AugSync" passHref>
               <a
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center"
+                className="flex items-center mb-4 sm:mb-0"
               >
                 <Icon
                   name="github"
@@ -40,7 +40,7 @@ export default function Contact() {
               <a
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center"
+                className="flex items-center mb-4 sm:mb-0"
               >
                 <Icon name="twitter" width="2.5rem" />
                 <p className="ml-4 mr-6 text-lg font-play text-blue">Twitter</p>
@@ -50,7 +50,7 @@ export default function Contact() {
               <a
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center"
+                className="flex items-center mb-4 sm:mb-0"
               >
                 <Icon
                   name="facebook"
