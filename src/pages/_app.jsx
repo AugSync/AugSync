@@ -3,7 +3,7 @@ import { useState, createContext } from 'react';
 import { GlobalStateContext } from 'context/GlobalStateContext';
 
 function App({ Component, pageProps }) {
-  const [isSidebarVisible, setIsSidebarVisible] = useState(true);
+  const [isSidebarVisible, setIsSidebarVisible] = useState(false);
   function toggleSidebar() {
     setIsSidebarVisible((visible) => !visible);
   }
