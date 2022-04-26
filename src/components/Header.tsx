@@ -15,7 +15,7 @@ export default function Header() {
           <div
             className={`fixed transition-all ${
               isSidebarVisible ? 'inline' : 'hidden'
-            } z-50 items-center justify-center mt-24 ml-3 sm:flex sm:relative sm:mt-0 sm:ml-0`}
+            } z-50 items-center justify-center mt-24 ml-3 sm:flex sm:relative sm:mt-0 sm:ml-0 `}
           >
             <Link href="/" passHref>
               <LinkButton icon="home" title="Home" activeByRoute />

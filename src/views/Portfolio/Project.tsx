@@ -16,7 +16,7 @@ export default function Project({ project }: { project: IProject }) {
         alt={project.openGraph.alt}
         responsiveImage={project.openGraph.responsiveImage}
       />
-      <article className="w-full p-10 sm:w-4/5">
+      <article className="w-full p-7 sm:w-4/5">
         <h1 className="text-2xl text-left font-play text-blue">
           {project.title}
         </h1>
