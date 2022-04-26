@@ -16,30 +16,30 @@ export default function Project({ project }: { project: IProject }) {
         alt={project.openGraph.alt}
         responsiveImage={project.openGraph.responsiveImage}
       />
-      <article className="w-4/5 m-10">
+      <article className="w-full p-10 sm:w-4/5">
         <h1 className="text-2xl text-left font-play text-blue">
           {project.title}
         </h1>
         <h2 className="mt-4 text-lg text-left font-ubuntu text-orange-dark">
           {project.seo.description}
         </h2>
-        <div className="flex flex-row mt-4">
+        <div className="flex flex-row flex-wrap mt-4">
           {project.tags.map((tag) => (
-            <div key={tag.id} className="mr-3">
+            <div key={tag.id} className="mb-4 mr-3">
               <PoweredByBadge languages={capitalize(tag.title)} />
             </div>
           ))}
         </div>
 
-        <div className="inline-block px-6 py-4 mt-4 bg-green">
-          <div className="flex items-center">
+        <div className="inline-block px-6 py-4 bg-green">
+          <div className="flex flex-col items-center sm:flex-row">
             <a
               href={project.seeInOperationUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center cursor-pointer"
+              className="flex items-center mb-4 cursor-pointer sm:mb-0"
             >
-              <Icon name="play" />
+              <Icon name="play" width="2.5rem" />
               <p className="ml-4 mr-6 text-lg font-play text-orange">
                 See in operation
               </p>
@@ -50,7 +50,7 @@ export default function Project({ project }: { project: IProject }) {
               rel="noopener noreferrer"
               className="flex items-center cursor-pointer"
             >
-              <Icon name="github" />
+              <Icon name="github" width="2.5rem" />
               <p className="ml-4 text-lg font-play text-blue">
                 Github Repository
               </p>

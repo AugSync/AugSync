@@ -6,7 +6,7 @@ export default function Paginator() {
     <div className="flex items-center justify-center my-10">
       <Link href="/blog">
         <a>
-          <Icon name="arrow-left" className="m-2" />
+          <Icon name="arrow-left" className="m-2" width="2.5rem" />
         </a>
       </Link>
       {[1, 2, 3, 4, 5].map((pageNumber, idx) => (

@@ -4,6 +4,7 @@ import Footer from 'components/Footer';
 import React from 'react';
 import Hero from 'components/Hero';
 import Icon from 'assets/icons';
+import Link from 'next/link';
 
 export default function Contact() {
   return (
@@ -19,16 +20,62 @@ export default function Contact() {
       <div className="flex justify-center w-full mb-10">
         <div className="inline-block px-6 py-4 mt-4 bg-green">
           <div className="flex items-center">
-            <Icon name="github" className="fill-current text-orange" />
-            <p className="ml-4 mr-6 text-lg font-play text-orange">Github</p>
-            <Icon name="twitter" />
-            <p className="ml-4 mr-6 text-lg font-play text-blue">Twitter</p>
-            <Icon name="facebook" className="fill-current text-blue-light" />
-            <p className="ml-4 mr-6 text-lg font-play text-blue-light">
-              Facebook
-            </p>
-            <Icon name="linked-in" className="fill-current text-white" />
-            <p className="ml-4 text-lg text-white font-play">LinkedIn</p>
+            <Link href="https://github.com/AugSync" passHref>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center"
+              >
+                <Icon
+                  name="github"
+                  className="fill-current text-orange"
+                  width="2.5rem"
+                />
+                <p className="ml-4 mr-6 text-lg font-play text-orange">
+                  Github
+                </p>
+              </a>
+            </Link>
+            <Link href="https://twitter.com/augsync" passHref>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center"
+              >
+                <Icon name="twitter" width="2.5rem" />
+                <p className="ml-4 mr-6 text-lg font-play text-blue">Twitter</p>
+              </a>
+            </Link>
+            <Link href="https://www.facebook.com/AugSync/" passHref>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center"
+              >
+                <Icon
+                  name="facebook"
+                  className="fill-current text-blue-light"
+                  width="2.5rem"
+                />
+                <p className="ml-4 mr-6 text-lg font-play text-blue-light">
+                  Facebook
+                </p>
+              </a>
+            </Link>
+            <Link href="https://www.linkedin.com/in/augsync/" passHref>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center"
+              >
+                <Icon
+                  name="linked-in"
+                  className="fill-current text-white"
+                  width="2.5rem"
+                />
+                <p className="ml-4 text-lg text-white font-play">LinkedIn</p>
+              </a>
+            </Link>
           </div>
         </div>
       </div>

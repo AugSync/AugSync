@@ -15,7 +15,7 @@ export default function ReactionsBadge({
         containerStyle
       )}
     >
-      <Icon name="face" />
+      <Icon name="face" width="2.5rem" />
       <p className="ml-2 text-base text-white font-ubuntu">{reactions}</p>
     </div>
   );
