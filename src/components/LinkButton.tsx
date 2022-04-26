@@ -32,7 +32,7 @@ export default React.forwardRef(function LinkButton(
       text-white 
       text-base
       font-ubuntu
-      flex items-center justify-center 
+      flex items-center justify-start sm:justify-center 
       focus:outline-none focus:ring-2 focus:ring-green focus:ring-inset
       `,
         isActive ? 'bg-green-light' : 'bg-green-dark'

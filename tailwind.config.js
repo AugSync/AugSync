@@ -32,7 +32,7 @@ module.exports = {
       },
     },
     fontSize: {
-      sm: '1rem',
+      sm: '1.4rem',
       base: '1.563rem',
       lg: '1.953rem',
       xl: '2.441rem',

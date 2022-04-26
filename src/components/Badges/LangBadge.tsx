@@ -15,7 +15,7 @@ export default function LangBadge({
         containerStyle
       )}
     >
-      <Icon name="flag" width="2.5rem" />
+      <Icon name="flag" width="1.5rem" />
       <p className="ml-2 text-base text-white font-ubuntu">{lang}</p>
     </div>
   );

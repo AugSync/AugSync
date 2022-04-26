@@ -79,7 +79,9 @@ export default function Contact() {
           </div>
         </div>
       </div>
-      <Footer />
+      <view className="absolute bottom-0 sm:relative w-full">
+        <Footer />
+      </view>
     </>
   );
 }
