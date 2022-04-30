@@ -25,7 +25,7 @@ export async function getStaticProps() {
             ...metaTagsFragment
           }
         }
-        allArticles(first: 10) {
+        allArticles(first: 10, orderBy: _createdAt_DESC) {
           id
           slug
           _createdAt
@@ -46,7 +46,7 @@ export async function getStaticProps() {
             locale
           }
         }
-        allProjects(first: 10) {
+        allProjects(first: 10, orderBy: _createdAt_DESC) {
           id
           slug
           _createdAt

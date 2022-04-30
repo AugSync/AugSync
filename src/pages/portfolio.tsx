@@ -24,7 +24,7 @@ export async function getStaticProps() {
             ...metaTagsFragment
           }
         }
-        allProjects {
+        allProjects(orderBy: _createdAt_DESC) {
           id
           slug
           _createdAt

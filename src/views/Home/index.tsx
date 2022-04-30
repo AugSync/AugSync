@@ -33,7 +33,7 @@ export default function Home({
         ))}
       </Masonry>
       <h1 className="my-10 text-2xl text-center font-play text-orange-dark">
-        Most Liked Projects
+        Latest Projects
       </h1>
       <Masonry
         breakpointCols={{
@@ -47,92 +47,6 @@ export default function Home({
         {allProjects.map((project) => (
           <ProjectPreview key={project.id} project={project} />
         ))}
-        {/* <ProjectPreview
-          title="Init project with Mysql"
-          description="Next its a open source project that find to help to many developers"
-          date="10/12/2021"
-          languages="javascript, React"
-          reactions={24}
-          image="/images/next.png"
-          altImage="nextjs image"
-          heightType="full"
-        />
-        <ProjectPreview
-          title="Init project with Mysql"
-          description="Next its a open source project that find to help to many developers"
-          date="10/12/2021"
-          languages="javascript, React"
-          reactions={24}
-          image="/images/postgres.jpg"
-          altImage="nextjs image"
-        />
-        <ProjectPreview
-          title="Init project with Mysql"
-          description="Next its a open source project that find to help to many developers"
-          date="10/12/2021"
-          languages="javascript, React"
-          reactions={500}
-          image="/images/postgres.jpg"
-          altImage="nextjs image"
-          heightType="full"
-        />
-        <ProjectPreview
-          title="Init project with Mysql"
-          description="Next its a open source project that find to help to many developers"
-          date="10/12/2021"
-          languages="javascript, React"
-          reactions={24}
-          image="/images/postgres.jpg"
-          altImage="nextjs image"
-          heightType="full"
-        />
-        <ProjectPreview
-          title="Init project with Mysql"
-          description="Next its a open source project that find to help to many developers"
-          date="10/12/2021"
-          languages="javascript, React"
-          reactions={500}
-          image="/images/postgres.jpg"
-          altImage="nextjs image"
-          heightType="full"
-        />
-        <ProjectPreview
-          title="Init project with Mysql"
-          description="Next its a open source project that find to help to many developers"
-          date="10/12/2021"
-          languages="javascript, React"
-          reactions={24}
-          image="/images/postgres.jpg"
-          altImage="nextjs image"
-          heightType="full"
-        />
-        <ProjectPreview
-          title="Init project with Mysql"
-          description="Next its a open source project that find to help to many developers"
-          date="10/12/2021"
-          languages="javascript, React"
-          reactions={24}
-          image="/images/postgres.jpg"
-          altImage="nextjs image"
-        />
-        <ProjectPreview
-          title="Init project with Mysql"
-          description="Next its a open source project that find to help to many developers"
-          date="10/12/2021"
-          languages="javascript, React"
-          reactions={24}
-          image="/images/postgres.jpg"
-          altImage="nextjs image"
-        />
-        <ProjectPreview
-          title="Init project with Mysql"
-          description="Next its a open source project that find to help to many developers"
-          date="10/12/2021"
-          languages="javascript, React"
-          reactions={24}
-          image="/images/postgres.jpg"
-          altImage="nextjs image"
-        /> */}
       </Masonry>
       <Footer />
     </>

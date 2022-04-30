@@ -36,6 +36,16 @@ export default function MarkDown({ content }: { content: string }) {
             />
           </div>
         ),
+        a: (props) => (
+          <a
+            className="text-blue-light hover:text-blue-dark"
+            href={props.href}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {props.children}
+          </a>
+        ),
 
         p: (props) => (
           <p className="mt-4 text-sm text-left text-white font-ubuntu">

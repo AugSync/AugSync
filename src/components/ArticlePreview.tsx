@@ -5,7 +5,7 @@ import { IArticle } from 'lib/dato-cms-service';
 import { getLang } from 'utils';
 import { format } from 'date-fns';
 import { es } from 'date-fns/locale';
-import { capitalize } from 'lodash';
+import { capitalize, truncate } from 'lodash';
 import { Image } from 'react-datocms';
 
 interface ProjectPreviewProps {
@@ -40,7 +40,7 @@ export default function ProjectPreview({ article }: ProjectPreviewProps) {
           <div className="absolute bottom-0 left-0 right-0 w-full p-5 bg-green-dark bg-opacity-80">
             <h2 className="text-xl text-blue font-play">{article.title}</h2>
             <p className="text-base text-orange font-ubuntu">
-              {article.seo.description}
+              {truncate(article.seo.description, { length: 90 })}
             </p>
             <p className="mt-2 text-sm text-white font-ubuntu">
               {capitalize(
