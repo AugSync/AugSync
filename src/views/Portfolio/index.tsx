@@ -9,13 +9,17 @@ import Search from 'components/Search';
 import commandLineValues from './portfolio-command-line-values';
 import { IAllProjects } from 'lib/dato-cms-service';
 import { useState } from 'react';
+import { useRouter } from 'next/router';
 
 export default function Portfolio({
   allProjects,
 }: {
   allProjects: IAllProjects;
 }) {
-  const [search, setSearch] = useState('');
+  const router = useRouter();
+  const [search, setSearch] = useState(
+    typeof router.query.search === 'string' ? router.query.search : ''
+  );
 
   const onSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearch(event.target.value);

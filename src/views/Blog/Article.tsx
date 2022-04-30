@@ -7,6 +7,7 @@ import { IArticle } from 'lib/dato-cms-service';
 import { getLang } from 'utils';
 import MarkDown from 'components/MarkDown';
 import { capitalize } from 'lodash';
+import Link from 'next/link';
 
 export default function Article({ article }: { article: IArticle }) {
   return (
@@ -27,14 +28,18 @@ export default function Article({ article }: { article: IArticle }) {
           {article._allContentLocales
             .map((tag) => capitalize(tag.locale))
             .map((lang) => (
-              <div key={lang} className="mb-4 mr-3">
-                <LangBadge lang={getLang(lang)} />
-              </div>
+              <Link key={lang} href={`/blog?search=${getLang(lang)}`}>
+                <a className="mb-4 mr-3">
+                  <LangBadge lang={getLang(lang)} />
+                </a>
+              </Link>
             ))}
           {article.tags.map((tag) => (
-            <div key={tag.id} className="mb-4 mr-3">
-              <PoweredByBadge languages={capitalize(tag.title)} />
-            </div>
+            <Link key={tag.id} href={`/blog?search=${capitalize(tag.title)}`}>
+              <a className="mb-4 mr-3">
+                <PoweredByBadge languages={capitalize(tag.title)} />
+              </a>
+            </Link>
           ))}
         </div>
 

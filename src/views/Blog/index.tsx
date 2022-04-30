@@ -12,9 +12,13 @@ import { useState } from 'react';
 import { format } from 'date-fns';
 import { es } from 'date-fns/locale';
 import { getLang } from 'utils';
+import { useRouter } from 'next/router';
 
 export default function Blog({ allArticles }: { allArticles: IAllArticles }) {
-  const [search, setSearch] = useState('');
+  const router = useRouter();
+  const [search, setSearch] = useState(
+    typeof router.query.search === 'string' ? router.query.search : ''
+  );
 
   const onSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearch(event.target.value);
@@ -57,6 +61,9 @@ export default function Blog({ allArticles }: { allArticles: IAllArticles }) {
                 getLang(lang.locale)
                   .toLowerCase()
                   .includes(search.toLowerCase())
+              ) ||
+              article.tags.some((tag) =>
+                tag.title.toLowerCase().includes(search.toLowerCase())
               ) ||
               format(new Date(article._createdAt), 'MMMM dd yyyy', {
                 locale: es,

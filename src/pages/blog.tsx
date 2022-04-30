@@ -44,6 +44,10 @@ export async function getStaticProps() {
           _allContentLocales {
             locale
           }
+          tags {
+            id
+            title
+          }
         }
       }
 
