@@ -2,13 +2,11 @@
 const colors = require('tailwindcss/colors');
 
 module.exports = {
-  purge: [
-    './src/components/**/*.{js,ts,jsx,tsx}',
+  content: [
     './src/pages/**/*.{js,ts,jsx,tsx}',
+    './src/components/**/*.{js,ts,jsx,tsx}',
     './src/views/**/*.{js,ts,jsx,tsx}',
-    './src/assets/**/*.{js,ts,jsx,tsx}',
   ],
-  darkMode: 'media', // 'media' or 'class'
   theme: {
     colors: {
       blue: {
@@ -34,7 +32,7 @@ module.exports = {
       },
     },
     fontSize: {
-      sm: '1rem',
+      sm: '1.4rem',
       base: '1.563rem',
       lg: '1.953rem',
       xl: '2.441rem',
@@ -62,13 +60,5 @@ module.exports = {
       colors,
     },
   },
-  variants: {
-    extend: {
-      ringWidth: ['hover'],
-      zIndex: ['hover'],
-      boxShadow: ['hover, responsive'],
-    },
-  },
   plugins: [],
-  important: true,
 };

@@ -5,8 +5,15 @@ import ArticlePreview from 'components/ArticlePreview';
 import ProjectPreview from 'components/ProjectPreview';
 import Masonry from 'react-masonry-css';
 import commandLineValues from './home-command-line-values';
+import { IAllArticles, IAllProjects } from 'lib/dato-cms-service';
 
-export default function Home() {
+export default function Home({
+  allArticles,
+  allProjects,
+}: {
+  allArticles: IAllArticles;
+  allProjects: IAllProjects;
+}) {
   return (
     <>
       <Header />
@@ -21,45 +28,12 @@ export default function Home() {
         className="my-masonry-grid"
         columnClassName="my-masonry-grid_column"
       >
-        <ArticlePreview
-          title="Init project with Nextjs"
-          description="Next its a open source project that find to help to many developers"
-          date="10/12/2021"
-          lang="English"
-          reactions={24}
-          image="/images/next.png"
-          altImage="nextjs image"
-        />
-        <ArticlePreview
-          title="Init project with Postgres"
-          description="Next its a open source project that find to help to many developers"
-          date="10/12/2021"
-          lang="English"
-          reactions={500}
-          image="/images/postgres.jpg"
-          altImage="nextjs image"
-        />
-        <ArticlePreview
-          title="Init project with Nextjs"
-          description="Next its a open source project that find to help to many developers"
-          date="10/12/2021"
-          lang="English"
-          reactions={24}
-          image="/images/postgres.jpg"
-          altImage="nextjs image"
-        />
-        <ArticlePreview
-          title="Init project with Nextjs"
-          description="Next its a open source project that find to help to many developers"
-          date="10/12/2021"
-          lang="English"
-          reactions={24}
-          image="/images/next.png"
-          altImage="nextjs image"
-        />
+        {allArticles.map((article) => (
+          <ArticlePreview key={article.id} article={article} />
+        ))}
       </Masonry>
       <h1 className="my-10 text-2xl text-center font-play text-orange-dark">
-        Most Liked Projects
+        Latest Projects
       </h1>
       <Masonry
         breakpointCols={{
@@ -70,92 +44,9 @@ export default function Home() {
         className="my-masonry-grid"
         columnClassName="my-masonry-grid_column"
       >
-        <ProjectPreview
-          title="Init project with Mysql"
-          description="Next its a open source project that find to help to many developers"
-          date="10/12/2021"
-          languages="javascript, React"
-          reactions={24}
-          image="/images/next.png"
-          altImage="nextjs image"
-          heightType="full"
-        />
-        <ProjectPreview
-          title="Init project with Mysql"
-          description="Next its a open source project that find to help to many developers"
-          date="10/12/2021"
-          languages="javascript, React"
-          reactions={24}
-          image="/images/postgres.jpg"
-          altImage="nextjs image"
-        />
-        <ProjectPreview
-          title="Init project with Mysql"
-          description="Next its a open source project that find to help to many developers"
-          date="10/12/2021"
-          languages="javascript, React"
-          reactions={500}
-          image="/images/postgres.jpg"
-          altImage="nextjs image"
-          heightType="full"
-        />
-        <ProjectPreview
-          title="Init project with Mysql"
-          description="Next its a open source project that find to help to many developers"
-          date="10/12/2021"
-          languages="javascript, React"
-          reactions={24}
-          image="/images/postgres.jpg"
-          altImage="nextjs image"
-          heightType="full"
-        />
-        <ProjectPreview
-          title="Init project with Mysql"
-          description="Next its a open source project that find to help to many developers"
-          date="10/12/2021"
-          languages="javascript, React"
-          reactions={500}
-          image="/images/postgres.jpg"
-          altImage="nextjs image"
-          heightType="full"
-        />
-        <ProjectPreview
-          title="Init project with Mysql"
-          description="Next its a open source project that find to help to many developers"
-          date="10/12/2021"
-          languages="javascript, React"
-          reactions={24}
-          image="/images/postgres.jpg"
-          altImage="nextjs image"
-          heightType="full"
-        />
-        <ProjectPreview
-          title="Init project with Mysql"
-          description="Next its a open source project that find to help to many developers"
-          date="10/12/2021"
-          languages="javascript, React"
-          reactions={24}
-          image="/images/postgres.jpg"
-          altImage="nextjs image"
-        />
-        <ProjectPreview
-          title="Init project with Mysql"
-          description="Next its a open source project that find to help to many developers"
-          date="10/12/2021"
-          languages="javascript, React"
-          reactions={24}
-          image="/images/postgres.jpg"
-          altImage="nextjs image"
-        />
-        <ProjectPreview
-          title="Init project with Mysql"
-          description="Next its a open source project that find to help to many developers"
-          date="10/12/2021"
-          languages="javascript, React"
-          reactions={24}
-          image="/images/postgres.jpg"
-          altImage="nextjs image"
-        />
+        {allProjects.map((project) => (
+          <ProjectPreview key={project.id} project={project} />
+        ))}
       </Masonry>
       <Footer />
     </>

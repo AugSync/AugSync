@@ -1,15 +1,17 @@
-import Head from 'next/head';
-
 import '../styles/index.css';
+import { useState, createContext } from 'react';
+import { GlobalStateContext } from 'context/GlobalStateContext';
 
 function App({ Component, pageProps }) {
+  const [isSidebarVisible, setIsSidebarVisible] = useState(false);
+  function toggleSidebar() {
+    setIsSidebarVisible((visible) => !visible);
+  }
+
   return (
-    <>
-      <Head>
-        <title>Augusto Barco | Full Stack Developer</title>
-      </Head>
+    <GlobalStateContext.Provider value={{ isSidebarVisible, toggleSidebar }}>
       <Component {...pageProps} />
-    </>
+    </GlobalStateContext.Provider>
   );
 }
 

@@ -1,8 +1,15 @@
-export default function Search() {
+export type ISearchProps = {
+  search: string;
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+};
+
+export default function Search({ search, onChange }: ISearchProps) {
   return (
-    <view className="flex items-center justify-start w-full pl-16 my-10">
-      <h3 className="mr-5 text-lg text-center font-play text-blue">Search</h3>
-      <div className="relative w-4/5">
+    <view className="flex flex-col items-start justify-start w-full px-16 my-10 sm:flex-row sm:items-center">
+      <h3 className="mb-2 text-lg text-center sm:mb-0 sm:mr-5 font-play text-blue">
+        Search
+      </h3>
+      <div className="relative w-full">
         <span className="absolute inset-y-0 flex items-center pl-2 right-8">
           <button
             type="submit"
@@ -10,7 +17,7 @@ export default function Search() {
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="40"
+              width="2.5rem"
               height="39"
               fill="none"
               viewBox="0 0 40 39"
@@ -27,6 +34,8 @@ export default function Search() {
         <input
           className="w-full px-6 py-3 text-lg shadow-input placeholder-orange placeholder-opacity-75 font-play text-orange bg-green-dark focus:outline-none focus:ring focus:ring-blue"
           placeholder="Write your search here..."
+          value={search}
+          onChange={onChange}
         />
       </div>
     </view>

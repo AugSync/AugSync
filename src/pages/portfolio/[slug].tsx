@@ -1,66 +1,105 @@
-import Project from 'views/Blog/Project';
+import {
+  IAllProjects,
+  IProject,
+  ISite,
+  makeRequest,
+} from 'lib/dato-cms-service';
+import { metaTagsFragment, responsiveImageFragment } from 'lib/graph-fragments';
+import Error from 'next/error';
+import Head from 'next/head';
+import { renderMetaTags } from 'react-datocms';
+import Project from 'views/Portfolio/Project';
 
-export default function Post({ markDown }: { markDown: string }) {
-  return <Project markDown={markDown} />;
+export default function ProjectView({ subscription }) {
+  const {
+    data: { project, site },
+  }: {
+    data: { project: IProject; site: ISite };
+  } = { data: subscription.initialData };
+
+  if (project === null) {
+    return <Error statusCode={404} />;
+  }
+
+  const metaTags = project.seoTags.concat(site.favicon);
+
+  return (
+    <>
+      <Head>{renderMetaTags(metaTags)}</Head>
+      <Project project={project} />
+    </>
+  );
 }
 
 export async function getStaticPaths() {
+  const { allProjects }: { allProjects: IAllProjects } = await makeRequest({
+    query: `{ allProjects { slug } }`,
+  });
+
   return {
-    paths: [
-      { params: { slug: 'example' } }, // See the "paths" section below
-    ],
-    fallback: false,
+    paths: allProjects.map((post) => `/portfolio/${post.slug}`),
+    fallback: 'blocking',
   };
 }
 
-export async function getStaticProps() {
+export async function getStaticProps({ params }) {
+  const graphqlRequest = {
+    query: `
+      query ProjectBySlug($slug: String) {
+        site: _site {
+          favicon: faviconMetaTags {
+            ...metaTagsFragment
+          }
+        }
+        project(filter: {slug: {eq: $slug}}) {
+          id
+          title
+          seo {
+            description
+          }
+          content
+          openGraph {
+            url
+            alt
+            responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 1920, h: 1080 }) {
+              ...responsiveImageFragment
+            }
+          }
+          _allContentLocales {
+            locale
+          }
+          tags {
+            id
+            title
+          }
+          seeInOperationUrl
+          githubUrl
+          seoTags: _seoMetaTags {
+            attributes
+            content
+            tag
+          }
+        }
+      }
+
+      ${metaTagsFragment}
+      ${responsiveImageFragment}
+    `,
+    variables: {
+      slug: params.slug,
+    },
+  };
+
+  const initialData = await makeRequest(graphqlRequest);
+
   return {
     props: {
-      markDown: `### This is a Sub-Heading 
+      subscription: {
+        enabled: false,
+        initialData,
+      },
+    },
 
-Contrary to popular belief, Lorem Ipsum is not simply random text. It
-has roots in a piece of classical Latin literature from 45 BC, making
-it over 2000 years old. Richard McClintock, a Latin professor at
-Hampden-Sydney College in Virginia, looked up one of the more obscure
-Latin words, consectetur, from a Lorem Ipsum passage, and going
-through the cites of the word in classical literature discovered the
-undoubtable source. Lorem Ipsum comes from sections 1.10.32 and
-1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and
-Evil) by Cicero, written in 45 BC. This book is a treatise on the
-theory of ethics, very popular during the Renaissance. The first line
-of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in
-section 1.10.32. The standard chunk of Lorem Ipsum used since the
-1500s is reproduced below for those interested. Sections 1.10.32 and
-1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also
-reproduced in their exact original form, accompanied by English
-versions from the 1914 translation by H. Rackham.
-
-~~~js
-import SyntaxHighlighter from 'react-syntax-highlighter';
-import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
-const Component = () => {
-  const codeString = '(num) => num + 1';
-  return (
-    <SyntaxHighlighter language="javascript" style={docco}>
-      {codeString}
-    </SyntaxHighlighter>
-  );
-};
-~~~
-
-Latin words, consectetur, from a Lorem Ipsum passage, and going
-through the cites of the word in classical literature, discovered the
-undoubtable source. Lorem Ipsum comes from sections 1.10.32 and
-1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and
-Evil) by Cicero, written in 45 BC. This book is a treatise on the
-theory of ethics, very popular during the Renaissance. The first line
-of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in
-section 1.10.32. The standard chunk of Lorem Ipsum used since the
-1500s is reproduced below for those interested. Sections 1.10.32 and
-1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also
-reproduced in their exact original form, accompanied by English
-versions from the 1914 translation by H. Rackham.
-`,
-    }, // will be passed to the page component as props
+    revalidate: 3600,
   };
 }

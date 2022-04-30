@@ -2,8 +2,18 @@ import Image from 'next/image';
 import React from 'react';
 import Icon from 'assets/icons';
 import { useRouter } from 'next/router';
+import { IResponsiveImage } from 'lib/graph-fragments';
+import { Image as DatoImage } from 'react-datocms';
 
-export default function Hero() {
+export default function Hero({
+  url,
+  alt,
+  responsiveImage,
+}: {
+  url?: string;
+  alt: string;
+  responsiveImage?: IResponsiveImage;
+}) {
   const router = useRouter();
 
   return (
@@ -15,13 +25,24 @@ export default function Hero() {
         <Icon name="back" className="w-10 mr-2" width="1.5rem" />
         Back
       </button>
-      <Image
-        src="/images/contact.jpg"
-        alt="Person contacting to anybody"
-        layout="fill"
-        objectFit="cover"
-        className="z-10"
-      />
+      {responsiveImage ? (
+        <DatoImage
+          data={{
+            ...responsiveImage,
+            alt,
+          }}
+          className="w-full h-full"
+          pictureStyle={{ objectFit: 'cover' }}
+        />
+      ) : (
+        <Image
+          src={url}
+          alt={alt}
+          layout="fill"
+          objectFit="cover"
+          className="z-10"
+        />
+      )}
     </div>
   );
 }
