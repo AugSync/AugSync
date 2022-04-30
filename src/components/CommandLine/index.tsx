@@ -174,10 +174,15 @@ export default function CommandLine({ values }: { values: cmdProps[] }) {
   const commandStyle = useSpring({ height });
 
   return (
-    <animated.div style={commandStyle} className="overflow-hidden bg-green">
-      <div {...bind} className="inline-block">
-        <CommandLineRender values={values} setIsDisconnect={setIsDisconnect} />
-      </div>
-    </animated.div>
+    <div>
+      <animated.div style={commandStyle} className="overflow-hidden bg-green">
+        <div {...bind} className="inline-block">
+          <CommandLineRender
+            values={values}
+            setIsDisconnect={setIsDisconnect}
+          />
+        </div>
+      </animated.div>
+    </div>
   );
 }
