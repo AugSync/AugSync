@@ -7,6 +7,7 @@ import { PoweredByBadge } from 'components/Badges';
 import { IProject } from 'lib/dato-cms-service';
 import MarkDown from 'components/MarkDown';
 import { capitalize } from 'lodash';
+import Link from 'next/link';
 
 export default function Project({ project }: { project: IProject }) {
   return (
@@ -25,9 +26,14 @@ export default function Project({ project }: { project: IProject }) {
         </h2>
         <div className="flex flex-row flex-wrap mt-4">
           {project.tags.map((tag) => (
-            <div key={tag.id} className="mb-4 mr-3">
-              <PoweredByBadge languages={capitalize(tag.title)} />
-            </div>
+            <Link
+              key={tag.id}
+              href={`/portfolio?search=${capitalize(tag.title)}`}
+            >
+              <a className="mb-4 mr-3">
+                <PoweredByBadge languages={capitalize(tag.title)} />
+              </a>
+            </Link>
           ))}
         </div>
 
