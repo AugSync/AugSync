@@ -22,7 +22,7 @@ export default function Portfolio({
   };
 
   return (
-    <>
+    <div className="flex flex-col h-screen">
       <Header />
       <CommandLine values={commandLineValues} />
       <h1 className="my-10 text-xl text-center font-play text-orange-dark">
@@ -45,7 +45,7 @@ export default function Portfolio({
           1100: 2,
           500: 1,
         }}
-        className="my-masonry-grid"
+        className="flex-auto my-masonry-grid"
         columnClassName="my-masonry-grid_column"
       >
         {allProjects
@@ -65,6 +65,6 @@ export default function Portfolio({
       </Masonry>
       {/* <Paginator /> */}
       <Footer />
-    </>
+    </div>
   );
 }
