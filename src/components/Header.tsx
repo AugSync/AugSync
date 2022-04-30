@@ -9,7 +9,7 @@ export default function Header() {
   const genericHamburgerLine = `h-1 w-6 my-1 rounded-full bg-white transition ease transform duration-300`;
 
   return (
-    <>
+    <div>
       <header className="fixed z-50 w-full bg-green-dark h-30">
         <nav className="container flex justify-between px-4 m-auto">
           <div
@@ -63,6 +63,6 @@ export default function Header() {
         </nav>
       </header>
       <div className="h-20 sm:h-14" />
-    </>
+    </div>
   );
 }
