@@ -10,29 +10,29 @@ import { capitalize } from 'lodash';
 
 export default function Article({ article }: { article: IArticle }) {
   return (
-    <>
+    <div className="flex flex-col h-screen">
       <Header />
       <Hero
         alt={article.openGraph.alt}
         responsiveImage={article.openGraph.responsiveImage}
       />
-      <article className="w-full p-7 sm:w-4/5">
+      <article className="flex-auto w-full p-7 sm:w-4/5">
         <h1 className="text-2xl text-left font-play text-blue">
           {article.title}
         </h1>
         <h2 className="mt-4 text-lg text-left font-ubuntu text-orange-dark">
           {article.seo.description}
         </h2>
-        <div className="flex flex-row mt-4">
+        <div className="flex flex-row flex-wrap mt-4">
           {article._allContentLocales
             .map((tag) => capitalize(tag.locale))
             .map((lang) => (
-              <div key={lang} className="mr-3">
+              <div key={lang} className="mb-4 mr-3">
                 <LangBadge lang={getLang(lang)} />
               </div>
             ))}
           {article.tags.map((tag) => (
-            <div key={tag.id} className="mr-3">
+            <div key={tag.id} className="mb-4 mr-3">
               <PoweredByBadge languages={capitalize(tag.title)} />
             </div>
           ))}
@@ -41,6 +41,6 @@ export default function Article({ article }: { article: IArticle }) {
         <MarkDown content={article.content} />
       </article>
       <Footer />
-    </>
+    </div>
   );
 }
