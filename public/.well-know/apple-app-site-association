@@ -1,0 +1,19 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "8Z5F4UD65A.com.cashship.exchange.app",
+        "paths": [
+          "*"
+        ]
+      },
+      {
+        "appID": "com.cashship.exchange.app",
+        "paths": [
+          "*"
+        ]
+      }
+    ]
+  }
+}
