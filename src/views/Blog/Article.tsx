@@ -28,17 +28,23 @@ export default function Article({ article }: { article: IArticle }) {
           {article._allContentLocales
             .map((tag) => capitalize(tag.locale))
             .map((lang) => (
-              <Link key={lang} href={`/blog?search=${getLang(lang)}`}>
-                <a className="mb-4 mr-3">
-                  <LangBadge lang={getLang(lang)} />
-                </a>
+              <Link
+                key={lang}
+                href={`/blog?search=${getLang(lang)}`}
+                className="mb-4 mr-3"
+                passHref
+              >
+                <LangBadge lang={getLang(lang)} />
               </Link>
             ))}
           {article.tags.map((tag) => (
-            <Link key={tag.id} href={`/blog?search=${capitalize(tag.title)}`}>
-              <a className="mb-4 mr-3">
-                <PoweredByBadge languages={capitalize(tag.title)} />
-              </a>
+            <Link
+              key={tag.id}
+              href={`/blog?search=${capitalize(tag.title)}`}
+              className="mb-4 mr-3"
+              passHref
+            >
+              <PoweredByBadge languages={capitalize(tag.title)} />
             </Link>
           ))}
         </div>

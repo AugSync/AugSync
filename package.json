@@ -10,9 +10,11 @@
     "format": "prettier --config ./.prettierrc.json --write **/*.tsx",
     "release": "dotenv release-it",
     "release:pre": "dotenv release-it pre",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lint:fix": "next lint --fix ."
   },
   "dependencies": {
+    "@vercel/analytics": "^0.1.11",
     "classnames": "^2.3.1",
     "clsx": "^1.1.1",
     "date-fns": "^2.28.0",
@@ -44,11 +46,11 @@
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-tailwind": "^0.2.1",
-    "next": "^12.1.6",
+    "next": "^13.2.4",
     "postcss": "^8.4.12",
     "prettier": "^2.2.1",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "release-it": "^14.11.8",
     "standard-changelog": "^2.0.27",
     "tailwindcss": "^3.0.23",

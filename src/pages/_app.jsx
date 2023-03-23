@@ -1,6 +1,7 @@
 import '../styles/index.css';
-import { useState, createContext } from 'react';
+import { useState } from 'react';
 import { GlobalStateContext } from 'context/GlobalStateContext';
+import { Analytics } from '@vercel/analytics/react';
 
 export function reportWebVitals(metric) {
   const url = process.env.NEXT_PUBLIC_AXIOM_INGEST_ENDPOINT;
@@ -30,6 +31,7 @@ function App({ Component, pageProps }) {
   return (
     <GlobalStateContext.Provider value={{ isSidebarVisible, toggleSidebar }}>
       <Component {...pageProps} />
+      <Analytics />
     </GlobalStateContext.Provider>
   );
 }

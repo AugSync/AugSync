@@ -29,10 +29,10 @@ export default function Project({ project }: { project: IProject }) {
             <Link
               key={tag.id}
               href={`/portfolio?search=${capitalize(tag.title)}`}
+              className="mb-4 mr-3"
+              passHref
             >
-              <a className="mb-4 mr-3">
-                <PoweredByBadge languages={capitalize(tag.title)} />
-              </a>
+              <PoweredByBadge languages={capitalize(tag.title)} />
             </Link>
           ))}
         </div>
