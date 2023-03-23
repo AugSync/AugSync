@@ -1,3 +1,22 @@
+## [0.0.0-canary.8](https://github.com/AugSync/AugSync/compare/0.0.0-canary.7...0.0.0-canary.8) (2023-03-23)
+
+
+### Features
+
+* fetch all projects and individual projects ([54215e5](https://github.com/AugSync/AugSync/commit/54215e5f0854c97378d5d72b3b8e4f86bae3720b))
+* fetch individual articles ([191047e](https://github.com/AugSync/AugSync/commit/191047eb052bf4caf59e56b10ab0a9a474c7a1b7))
+* Get articles from DATO CMS in Home page ([dd1ac7d](https://github.com/AugSync/AugSync/commit/dd1ac7d9cde88deecb7cd1600e2505f002d45f52))
+* Implement paginator ([1a2f8e4](https://github.com/AugSync/AugSync/commit/1a2f8e4084f01d3ac8594d5ce5dc2191f94ec564))
+* Implement paginator in portfolio view ([0cc0218](https://github.com/AugSync/AugSync/commit/0cc0218247872809a5c43555f093e1a8dc6a97be))
+* Optimize images with dato cms library ([05777e4](https://github.com/AugSync/AugSync/commit/05777e485b306a5610cc1237e711856225fec068))
+* Use only one fetch ([eb9912d](https://github.com/AugSync/AugSync/commit/eb9912dd0d32bf74beb04ba15234c2c816d12f9b))
+* use vercel analitycs ([3a25c42](https://github.com/AugSync/AugSync/commit/3a25c422af03a698c276d49721f2dbdfc2cadac8))
+
+
+### Reverts
+
+* Revert "Add temporaly well know" ([e8c4b61](https://github.com/AugSync/AugSync/commit/e8c4b61a04b32362f5b7ddeefec2121ddc0d6ad1))
+
 ## [0.0.0-canary.7](https://github.com/AugSync/AugSync/compare/0.0.0-canary.6...0.0.0-canary.7) (2021-11-22)
 
 
