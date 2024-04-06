@@ -17,16 +17,16 @@ export default function Header() {
               isSidebarVisible ? 'inline' : 'hidden'
             } z-50 items-center justify-center mt-24 ml-3 sm:flex sm:relative sm:mt-0 sm:ml-0 `}
           >
-            <Link href="/" passHref>
+            <Link href="/" passHref legacyBehavior>
               <LinkButton icon="home" title="Home" activeByRoute />
             </Link>
-            <Link href="/blog" passHref>
+            <Link href="/blog" passHref legacyBehavior>
               <LinkButton icon="document" title="Blog" activeByRoute />
             </Link>
-            <Link href="/portfolio" passHref>
+            <Link href="/portfolio" passHref legacyBehavior>
               <LinkButton icon="folder" title="Portfolio" activeByRoute />
             </Link>
-            <Link href="/contact" passHref>
+            <Link href="/contact" passHref legacyBehavior>
               <LinkButton icon="mail" title="Contact" activeByRoute />
             </Link>
           </div>
