@@ -1,7 +1,7 @@
 {
   "name": "augsync",
   "version": "0.0.0-canary.9",
-  "description": "Personal web page",
+  "description": "Personal web page and portfolio",
   "private": true,
   "scripts": {
     "dev": "next dev",
