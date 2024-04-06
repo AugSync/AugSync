@@ -1,3 +1,10 @@
+## [0.0.0-canary.12](https://github.com/AugSync/AugSync/compare/0.0.0-canary.11...0.0.0-canary.12) (2024-04-06)
+
+
+### Features
+
+* add comment on .env.example ([f9f53bd](https://github.com/AugSync/AugSync/commit/f9f53bd862059c0e426a674b398e3651b5a4d6b0))
+
 
 
 ## [0.0.0-canary.10](https://github.com/AugSync/AugSync/compare/0.0.0-canary.9...0.0.0-canary.10) (2024-04-06)
