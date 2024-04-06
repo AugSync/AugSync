@@ -2,6 +2,7 @@ import '../styles/index.css';
 import { useState } from 'react';
 import { GlobalStateContext } from 'context/GlobalStateContext';
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 export function reportWebVitals(metric) {
   const url = process.env.NEXT_PUBLIC_AXIOM_INGEST_ENDPOINT;
@@ -32,6 +33,7 @@ function App({ Component, pageProps }) {
     <GlobalStateContext.Provider value={{ isSidebarVisible, toggleSidebar }}>
       <Component {...pageProps} />
       <Analytics />
+      <SpeedInsights />
     </GlobalStateContext.Provider>
   );
 }
