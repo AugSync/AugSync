@@ -1,3 +1,5 @@
+## [0.0.0-canary.9](https://github.com/AugSync/AugSync/compare/0.0.0-canary.8...0.0.0-canary.9) (2024-04-06)
+
 ## [0.0.0-canary.8](https://github.com/AugSync/AugSync/compare/0.0.0-canary.7...0.0.0-canary.8) (2023-03-23)
 
 
