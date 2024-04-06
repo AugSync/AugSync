@@ -1,3 +1,28 @@
+
+
+## [0.0.0-canary.13](https://github.com/AugSync/AugSync/compare/0.0.0-canary.12...0.0.0-canary.13) (2024-04-06)
+
+
+### Features & Enhancements
+
+* Add new desc to feat ([5ce7816](https://github.com/AugSync/AugSync/commit/5ce7816bbe49ac4edc7d60f377bd45992a488f0c))
+
+
+### Bug Fixes
+
+* Add hidden false on types ([f38d8c5](https://github.com/AugSync/AugSync/commit/f38d8c5a8dae93fba51c9d51fed16b767862211a))
+* Add more types to release-it ([23a5d61](https://github.com/AugSync/AugSync/commit/23a5d616f5d39e2261bfad4b2af8475dbba5177a))
+* Fix release it config ([ec6f8e5](https://github.com/AugSync/AugSync/commit/ec6f8e58c78fc7e34266476a1174f2dc0ece19fa))
+* Fix release it file ([be7ca7b](https://github.com/AugSync/AugSync/commit/be7ca7b8621c218c87201b8bc0d2b61f7306bf32))
+* Move release config to package ([bd232b7](https://github.com/AugSync/AugSync/commit/bd232b7a4e26d374ad14026d753016bc969541fe))
+* Remove tag name ([02605e5](https://github.com/AugSync/AugSync/commit/02605e5450977fda6054216b21734822b3885a15))
+* Update release-it libraries ([f78a92b](https://github.com/AugSync/AugSync/commit/f78a92b16db79a9d5a66f25d010bedb936eafc4a))
+
+
+### Documentation
+
+* Explain how to make commits ([a537452](https://github.com/AugSync/AugSync/commit/a5374523cc558fd8e0a444539e84f47ebdf12abb))
+
 ## [0.0.0-canary.12](https://github.com/AugSync/AugSync/compare/0.0.0-canary.11...0.0.0-canary.12) (2024-04-06)
 
 
@@ -83,4 +108,3 @@
 * Change release module ([9d203a9](https://github.com/AugSync/AugSync/commit/9d203a99fb3843af73dcf29d6a188dfcde048238))
 * Fix standar changelog module ([03d3003](https://github.com/AugSync/AugSync/commit/03d3003bf81b647ce2128fd872fb827c550d572f))
 * reset versions ([6655650](https://github.com/AugSync/AugSync/commit/66556507f8284e86bccb4c7374f5d0cfc885735d))
-
