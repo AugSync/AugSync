@@ -25,7 +25,7 @@ export default function Home({
         breakpointCols={{
           500: 1,
         }}
-        className="my-masonry-grid"
+        className="my-masonry-grid my-masonry-grid_max-width"
         columnClassName="my-masonry-grid_column"
       >
         {allArticles.map((article) => (
@@ -41,7 +41,7 @@ export default function Home({
           1100: 2,
           500: 1,
         }}
-        className="my-masonry-grid"
+        className="my-masonry-grid my-masonry-grid_max-width"
         columnClassName="my-masonry-grid_column"
       >
         {allProjects.map((project) => (

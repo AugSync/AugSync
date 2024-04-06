@@ -5,7 +5,7 @@ export type ISearchProps = {
 
 export default function Search({ search, onChange }: ISearchProps) {
   return (
-    <view className="flex flex-col items-start justify-start w-full px-16 my-10 sm:flex-row sm:items-center">
+    <view className="flex flex-col items-start justify-start w-full px-16 my-10 sm:flex-row sm:items-center my-masonry-grid_max-width">
       <h3 className="mb-2 text-lg text-center sm:mb-0 sm:mr-5 font-play text-blue">
         Search
       </h3>

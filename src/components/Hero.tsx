@@ -17,7 +17,10 @@ export default function Hero({
   const router = useRouter();
 
   return (
-    <div className="relative w-full" style={{ height: '30rem' }}>
+    <div
+      className="relative w-full my-masonry-grid_max-width"
+      style={{ height: '30rem' }}
+    >
       <button
         className="absolute z-20 flex items-center justify-center px-4 py-2 text-base text-white bg-orange-dark font-ubuntu top-7 left-7"
         onClick={() => router.back()}

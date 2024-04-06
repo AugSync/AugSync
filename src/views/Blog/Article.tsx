@@ -17,7 +17,7 @@ export default function Article({ article }: { article: IArticle }) {
         alt={article.openGraph.alt}
         responsiveImage={article.openGraph.responsiveImage}
       />
-      <article className="flex-auto w-full p-7 sm:w-4/5">
+      <article className="flex-auto w-full p-7 sm:w-4/5 my-masonry-grid_max-width">
         <h1 className="text-2xl text-left font-play text-blue">
           {article.title}
         </h1>

@@ -129,7 +129,7 @@ const CommandLineRender = ({
   }, [router.pathname]);
 
   return (
-    <div className="container px-10 pt-10 pb-16 m-auto">
+    <div className="container px-10 pt-10 pb-16 m-auto my-masonry-grid_max-width">
       {currentPage &&
         values.map(({ type, title, color }, idx) => {
           switch (type) {
@@ -175,8 +175,11 @@ export default function CommandLine({ values }: { values: cmdProps[] }) {
 
   return (
     <div>
-      <animated.div style={commandStyle} className="overflow-hidden bg-green">
-        <div {...bind} className="inline-block">
+      <animated.div
+        style={commandStyle}
+        className="items-center overflow-hidden bg-green"
+      >
+        <div {...bind} className="items-center">
           <CommandLineRender
             values={values}
             setIsDisconnect={setIsDisconnect}

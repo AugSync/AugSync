@@ -49,7 +49,7 @@ export default function Portfolio({
           1100: 2,
           500: 1,
         }}
-        className="flex-auto my-masonry-grid"
+        className="flex-auto my-masonry-grid my-masonry-grid_max-width"
         columnClassName="my-masonry-grid_column"
       >
         {allProjects
