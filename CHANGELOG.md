@@ -1,5 +1,17 @@
 
 
+## [0.0.0-canary.14](https://github.com/AugSync/AugSync/compare/0.0.0-canary.13...0.0.0-canary.14) (2024-04-23)
+
+
+### Features & Enhancements
+
+* add /app-ads.txt ([0368f59](https://github.com/AugSync/AugSync/commit/0368f59077f365046eb392f7c275b69e84d99afe))
+
+
+### Bug Fixes
+
+* increase date-fns version ([b1cb95a](https://github.com/AugSync/AugSync/commit/b1cb95a6befe0d06a0b0bd9ad2a01c85dace849b))
+
 ## [0.0.0-canary.13](https://github.com/AugSync/AugSync/compare/0.0.0-canary.12...0.0.0-canary.13) (2024-04-06)
 
 
