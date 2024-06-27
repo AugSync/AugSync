@@ -59,8 +59,23 @@ const RocketAllianceDeleteAccountRequest: React.FC = () => {
         <section className="bg-gray-100">
           <div className="px-4 py-8 mx-auto max-w-screen-md">
             <h1 className="mb-4 text-4xl font-extrabold text-center">
-              Delete Your Account of Rocket Alliance
+              Delete Your Rocket Alliance Account
             </h1>
+            <p className="mb-6 font-light text-center text-gray-500">
+              To delete your Rocket Alliance account, please follow these steps:
+            </p>
+            <ol className="mb-4 list-decimal list-inside">
+              <li>Fill in your email address associated with your account.</li>
+              <li>Provide a reason for account deletion (optional).</li>
+              <li>Submit the request.</li>
+            </ol>
+            <p className="mb-4 font-light text-center text-gray-500">
+              Upon submitting your request, your account and all associated data
+              will be permanently deleted. This includes your game progress,
+              achievements, and any purchased items. Please note that some
+              information, such as transaction records, may be retained for
+              legal and financial auditing purposes.
+            </p>
             <p className="mb-6 font-light text-center text-gray-500">
               We&apos;re sorry to see you go. If you&apos;re sure you want to
               delete your Rocket Alliance account, please submit the form below.
