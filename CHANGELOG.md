@@ -1,5 +1,12 @@
 
 
+## [0.0.1](https://github.com/AugSync/AugSync/compare/0.0.0...0.0.1) (2024-06-27)
+
+
+### Chores
+
+* Update Rocket Alliance page layout and design ([b8c99de](https://github.com/AugSync/AugSync/commit/b8c99ded4d3facb7e147323053bee4c6052dfc35))
+
 ## [0.0.0](https://github.com/AugSync/AugSync/compare/0.0.0-canary.14...0.0.0) (2024-06-27)
 
 
