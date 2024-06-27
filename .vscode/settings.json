@@ -4,6 +4,8 @@
     "conventionalcommits",
     "datocms",
     "DATOCMS",
+    "firestore",
+    "Firestore",
     "imgix",
     "infile"
   ]
