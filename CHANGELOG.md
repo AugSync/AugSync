@@ -1,5 +1,12 @@
 
 
+## [0.1.0](https://github.com/AugSync/AugSync/compare/0.0.2...0.1.0) (2024-06-27)
+
+
+### Features & Enhancements
+
+* Add more info ([a4a2b53](https://github.com/AugSync/AugSync/commit/a4a2b53779d9afc796e8f9dc7651783c9480d4a3))
+
 ## [0.0.2](https://github.com/AugSync/AugSync/compare/0.0.1...0.0.2) (2024-06-27)
 
 
