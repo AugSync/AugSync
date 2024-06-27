@@ -1,5 +1,12 @@
 
 
+## [0.0.2](https://github.com/AugSync/AugSync/compare/0.0.1...0.0.2) (2024-06-27)
+
+
+### Chores
+
+* Update .env.example and package.json for Firebase integration ([00261d6](https://github.com/AugSync/AugSync/commit/00261d6e7f7af243eb70c4bd7114e6c91f56e553))
+
 ## [0.0.1](https://github.com/AugSync/AugSync/compare/0.0.0...0.0.1) (2024-06-27)
 
 
