@@ -1,5 +1,12 @@
 
 
+## [0.0.0](https://github.com/AugSync/AugSync/compare/0.0.0-canary.14...0.0.0) (2024-06-27)
+
+
+### Features & Enhancements
+
+* Add Rocket Alliance page with SEO metadata and Google Play download button ([222f9f1](https://github.com/AugSync/AugSync/commit/222f9f1a97e89ac9ae6cdd9f373857ee188dc410))
+
 ## [0.0.0-canary.14](https://github.com/AugSync/AugSync/compare/0.0.0-canary.13...0.0.0-canary.14) (2024-04-23)
 
 
