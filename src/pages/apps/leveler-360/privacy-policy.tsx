@@ -7,6 +7,7 @@ const RocketAlliance: React.FC = () => {
     <>
       <Head>
         <title>Leveler 360 | Privacy Policy</title>
+        <link rel="icon" href="/leveler-360.ico" />
       </Head>
 
       <div
