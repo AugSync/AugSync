@@ -1,5 +1,14 @@
 
 
+## [0.2.0](https://github.com/AugSync/AugSync/compare/0.1.0...0.2.0) (2026-02-20)
+
+
+### Features & Enhancements
+
+* add impostor game privacy policy ([7c7b9fc](https://github.com/AugSync/AugSync/commit/7c7b9fc475f36b04953d7e84734bbeebf3a54a80))
+* Add ludo savage app privacy policy ([d9c7832](https://github.com/AugSync/AugSync/commit/d9c78320cff162e1980efdb88a6548b4a9c7c706))
+* generate Flashlight Compass privacy policy page ([e2f5a8c](https://github.com/AugSync/AugSync/commit/e2f5a8cb21042c14d08a96518d039f1e7068515b))
+
 ## [0.1.0](https://github.com/AugSync/AugSync/compare/0.0.2...0.1.0) (2024-06-27)
 
 
