@@ -1,5 +1,12 @@
 
 
+## [0.3.0](https://github.com/AugSync/AugSync/compare/0.2.0...0.3.0) (2026-02-22)
+
+
+### Features & Enhancements
+
+* create privacy policy for bubble zen ([965f915](https://github.com/AugSync/AugSync/commit/965f9159736be9bc7852ae3aa2a6ba43137ff772))
+
 ## [0.2.0](https://github.com/AugSync/AugSync/compare/0.1.0...0.2.0) (2026-02-20)
 
 
