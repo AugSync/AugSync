@@ -1,5 +1,12 @@
 
 
+## [0.3.1](https://github.com/AugSync/AugSync/compare/0.3.0...0.3.1) (2026-02-22)
+
+
+### Bug Fixes
+
+* remove space on url ([13e9440](https://github.com/AugSync/AugSync/commit/13e9440633e3ad875396f279d93ab222ff0fab8b))
+
 ## [0.3.0](https://github.com/AugSync/AugSync/compare/0.2.0...0.3.0) (2026-02-22)
 
 
