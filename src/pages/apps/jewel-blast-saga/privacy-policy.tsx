@@ -3,12 +3,12 @@
 import React from 'react';
 import Head from 'next/head'; // Import Head for SEO
 
-const BubbleZen: React.FC = () => {
+const JewelBlastSaga: React.FC = () => {
   return (
     <>
       <Head>
-        <title>Bubble Zen: Wild Forest Pop | Privacy Policy</title>
-        <link rel="icon" href="/bubble-zen.ico" />
+        <title>Jewel Blast Saga | Privacy Policy</title>
+        <link rel="icon" href="/jewel-blast-saga.ico" />
       </Head>
 
       <div
@@ -23,7 +23,7 @@ const BubbleZen: React.FC = () => {
             <strong>Privacy Policy</strong>
           </p>
           <p>
-            This privacy policy applies to the Bubble Zen: Wild Forest Pop app (hereby
+            This privacy policy applies to the Jewel Blast Saga app (hereby
             referred to as "Application") for mobile devices that was created by
             Augsync (hereby referred to as "Service Provider") as a Free
             service. This service is intended for use "AS IS".
@@ -223,4 +223,4 @@ const BubbleZen: React.FC = () => {
   );
 };
 
-export default BubbleZen;
+export default JewelBlastSaga;
