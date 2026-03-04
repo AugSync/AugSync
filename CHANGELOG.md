@@ -1,5 +1,12 @@
 
 
+## [0.4.0](https://github.com/AugSync/AugSync/compare/0.3.1...0.4.0) (2026-03-04)
+
+
+### Features & Enhancements
+
+* add jewel-blast-saga privacy policy ([9ec1841](https://github.com/AugSync/AugSync/commit/9ec184140f81b9d7a20eb2d276f036b95a4d5817))
+
 ## [0.3.1](https://github.com/AugSync/AugSync/compare/0.3.0...0.3.1) (2026-02-22)
 
 
