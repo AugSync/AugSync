@@ -1,5 +1,12 @@
 
 
+## [0.5.0](https://github.com/AugSync/AugSync/compare/0.4.0...0.5.0) (2026-03-06)
+
+
+### Features & Enhancements
+
+* add capybara-stack-pet-tower-jump privacy policy app ([ed32f69](https://github.com/AugSync/AugSync/commit/ed32f6995bac2ab6d95745621a455d051344e43b))
+
 ## [0.4.0](https://github.com/AugSync/AugSync/compare/0.3.1...0.4.0) (2026-03-04)
 
 
