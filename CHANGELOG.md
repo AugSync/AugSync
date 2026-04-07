@@ -1,5 +1,12 @@
 
 
+## [0.6.0](https://github.com/AugSync/AugSync/compare/0.5.0...0.6.0) (2026-04-07)
+
+
+### Features & Enhancements
+
+* add football-fan-2026 privacy policy app ([2462576](https://github.com/AugSync/AugSync/commit/2462576a7e4d1b43632dca040b97c0009353c2c7))
+
 ## [0.5.0](https://github.com/AugSync/AugSync/compare/0.4.0...0.5.0) (2026-03-06)
 
 
