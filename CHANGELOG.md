@@ -1,4 +1,10 @@
+# Changelog
 
+## 0.6.2 (2026-08-24)
+
+### Chores
+
+* bump version to 0.6.1 and update dependencies for Node 20/Vercel support ([#64](https://github.com/AugSync/AugSync/issues/64)) ([ea4579d](https://github.com/AugSync/AugSync/commit/ea4579d06370322217fbf337cf17eee9b2b89bf0))
 
 ## [0.6.1](https://github.com/AugSync/AugSync/compare/0.6.0...0.6.1) (2026-08-24)
 
