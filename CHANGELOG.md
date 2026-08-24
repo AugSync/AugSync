@@ -1,5 +1,12 @@
 
 
+## [0.6.1](https://github.com/AugSync/AugSync/compare/0.6.0...0.6.1) (2026-08-24)
+
+
+### Chores
+
+* update dependencies for Node stable compatibility ([381cf23](https://github.com/AugSync/AugSync/commit/381cf23c49dc9a19003249613e1ee0ff2dd2bf79))
+
 ## [0.6.0](https://github.com/AugSync/AugSync/compare/0.5.0...0.6.0) (2026-04-07)
 
 
