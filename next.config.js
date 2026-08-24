@@ -1,5 +1,10 @@
 module.exports = {
   images: {
-    domains: ['www.datocms-assets.com'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'www.datocms-assets.com',
+      },
+    ],
   },
 };

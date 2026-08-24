@@ -7,7 +7,6 @@
     "next",
     "plugin:tailwind/recommended",
     "prettier",
-    "prettier/@typescript-eslint",
     "plugin:prettier/recommended"
   ],
   "parser": "@typescript-eslint/parser",
