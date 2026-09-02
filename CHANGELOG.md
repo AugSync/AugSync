@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.6.4](https://github.com/AugSync/AugSync/compare/0.6.3...0.6.4) (2026-09-02)
+
+### Bug Fixes
+
+* pin node engine to 20.x and replace obsolete tailwind eslint plugin ([4dba509](https://github.com/AugSync/AugSync/commit/4dba50979c4810d083547ae11cc235c8c3f4e426))
+
 ## [0.6.3](https://github.com/AugSync/AugSync/compare/0.7.0...0.6.3) (2026-09-02)
 
 ### Chores
