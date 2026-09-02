@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.6.6](https://github.com/AugSync/AugSync/compare/0.6.5...0.6.6) (2026-09-02)
+
+### Bug Fixes
+
+* remove engines restriction and restore default tailwind colors ([93766c1](https://github.com/AugSync/AugSync/commit/93766c1bb848395f9977e1afa142345134c84678))
+
 ## [0.6.5](https://github.com/AugSync/AugSync/compare/0.6.4...0.6.5) (2026-09-02)
 
 ### Chores
