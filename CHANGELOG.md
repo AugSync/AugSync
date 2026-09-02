@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.6.3](https://github.com/AugSync/AugSync/compare/0.7.0...0.6.3) (2026-09-02)
+
+### Chores
+
+* **deps:** update safe minor and patch dependencies ([526c52d](https://github.com/AugSync/AugSync/commit/526c52d30a678f3deeebc7ff65f64e642948e50d))
+
 ## 0.6.2 (2026-08-24)
 
 ### Chores
