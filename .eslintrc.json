@@ -5,7 +5,7 @@
   },
   "extends": [
     "next",
-    "plugin:tailwind/recommended",
+    "plugin:tailwindcss/recommended",
     "prettier",
     "plugin:prettier/recommended"
   ],
@@ -36,7 +36,10 @@
         "singleQuote": true,
         "endOfLine": "auto"
       }
-    ]
+    ],
+    "tailwindcss/no-custom-classname": "off",
+    "tailwindcss/classnames-order": "off",
+    "tailwindcss/enforces-shorthand": "off"
   },
   "globals": {
     "React": "writable"

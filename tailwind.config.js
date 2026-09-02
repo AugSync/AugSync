@@ -1,6 +1,3 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
-const colors = require('tailwindcss/colors');
-
 module.exports = {
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx}',
@@ -56,9 +53,7 @@ module.exports = {
       '3xl': '0 35px 60px -15px rgba(0, 0, 0, 0.3)',
       input: '0 24px 53px -12px rgba(0, 0, 0, 0.55)',
     },
-    extend: {
-      colors,
-    },
+    extend: {},
   },
   plugins: [],
 };

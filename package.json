@@ -4,7 +4,7 @@
   "description": "Personal web page and portfolio",
   "private": true,
   "engines": {
-    "node": ">=20.0.0"
+    "node": "20.x"
   },
   "scripts": {
     "dev": "next dev",
@@ -48,7 +48,7 @@
     "eslint-config-next": "^14.2.35",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.3",
-    "eslint-plugin-tailwind": "^0.2.1",
+    "eslint-plugin-tailwindcss": "^3.17.5",
     "next": "^14.2.35",
     "postcss": "^8.5.3",
     "prettier": "^3.5.3",
