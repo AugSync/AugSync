@@ -4,7 +4,7 @@
   "description": "Personal web page and portfolio",
   "private": true,
   "engines": {
-    "node": "20.x"
+    "node": "20.x || 22.x"
   },
   "scripts": {
     "dev": "next dev",
