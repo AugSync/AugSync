@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.6.5](https://github.com/AugSync/AugSync/compare/0.6.4...0.6.5) (2026-09-02)
+
+### Chores
+
+* update node engine to 20.x || 22.x LTS ([529eb89](https://github.com/AugSync/AugSync/commit/529eb891805c4fa4a74c2e7888f7c1fa2227e4ce))
+
 ## [0.6.4](https://github.com/AugSync/AugSync/compare/0.6.3...0.6.4) (2026-09-02)
 
 ### Bug Fixes
