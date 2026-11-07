@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.7.3](https://github.com/AugSync/AugSync/compare/0.7.2...0.7.3) (2026-11-07)
+
+### Features & Enhancements
+
+* **estimalo:** delete account page ([1076518](https://github.com/AugSync/AugSync/commit/107651893d878f470e313171fc6a5c11efce73bc))
+
 ## [0.7.2](https://github.com/AugSync/AugSync/compare/0.7.1...0.7.2) (2026-11-07)
 
 ### Features & Enhancements
