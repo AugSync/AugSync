@@ -4,14 +4,14 @@ import Head from 'next/head';
 
 const EMAIL = 'augustobarco.dev@gmail.com';
 
-const Cuadrilla: React.FC = () => {
+const Estimalo: React.FC = () => {
   return (
     <>
       <Head>
-        <title>Cuadrilla | Privacy Policy</title>
+        <title>Estímalo | Privacy Policy</title>
         <meta
           name="description"
-          content="Privacy policy for Cuadrilla, the estimates and invoices app."
+          content="Privacy policy for Estímalo, the estimates and invoices app."
         />
       </Head>
 
@@ -25,12 +25,12 @@ const Cuadrilla: React.FC = () => {
           <a href="#es">Leer en español</a>
         </p>
         <p>
-          This privacy policy applies to the Cuadrilla app (hereby referred to
-          as "Application") for Android devices, created by Augsync (hereby
-          referred to as "Service Provider"). Cuadrilla lets contractors write
+          This privacy policy applies to the Estímalo app (hereby referred to as
+          "Application") for Android devices, created by Augsync (hereby
+          referred to as "Service Provider"). Estímalo lets contractors write
           estimates and invoices in Spanish and send them to their clients in
           English, Spanish or both. The Application can be used for free, with
-          optional paid features (Cuadrilla Pro).
+          optional paid features (Estímalo Pro).
         </p>
 
         <p>
@@ -217,11 +217,11 @@ const Cuadrilla: React.FC = () => {
           <strong>Política de privacidad</strong>
         </p>
         <p>
-          Esta política aplica a la app Cuadrilla (la "Aplicación") para
-          Android, creada por Augsync (el "Proveedor"). Cuadrilla sirve para
-          hacer estimados y facturas en español y enviarlos a tus clientes en
-          inglés, en español o en los dos idiomas. Se puede usar gratis, con
-          funciones de pago opcionales (Cuadrilla Pro).
+          Esta política aplica a la app Estímalo (la "Aplicación") para Android,
+          creada por Augsync (el "Proveedor"). Estímalo sirve para hacer
+          estimados y facturas en español y enviarlos a tus clientes en inglés,
+          en español o en los dos idiomas. Se puede usar gratis, con funciones
+          de pago opcionales (Estímalo Pro).
         </p>
 
         <p>
@@ -367,4 +367,4 @@ const Cuadrilla: React.FC = () => {
   );
 };
 
-export default Cuadrilla;
+export default Estimalo;
