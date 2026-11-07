@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.7.1](https://github.com/AugSync/AugSync/compare/0.6.6...0.7.1) (2026-11-07)
+
+### Features & Enhancements
+
+* add Cuadrilla privacy policy page ([26de558](https://github.com/AugSync/AugSync/commit/26de5580c7be49664407b8e83234e7fc8708feac))
+
 ## [0.6.6](https://github.com/AugSync/AugSync/compare/0.6.5...0.6.6) (2026-09-02)
 
 ### Bug Fixes
