@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.7.2](https://github.com/AugSync/AugSync/compare/0.7.1...0.7.2) (2026-11-07)
+
+### Features & Enhancements
+
+* rename Cuadrilla privacy policy to Estímalo ([42913bf](https://github.com/AugSync/AugSync/commit/42913bf0589205cdb0e2334e96479a670510f82d))
+
 ## [0.7.1](https://github.com/AugSync/AugSync/compare/0.6.6...0.7.1) (2026-11-07)
 
 ### Features & Enhancements
