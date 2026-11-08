@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.7.4](https://github.com/AugSync/AugSync/compare/0.7.3...0.7.4) (2026-11-08)
+
+### Features & Enhancements
+
+* generic AugSync privacy policy for the shared Google sign-in screen ([d3bcc09](https://github.com/AugSync/AugSync/commit/d3bcc09f28b9bb4d70651a9b08c9eee093a09877))
+
 ## [0.7.3](https://github.com/AugSync/AugSync/compare/0.7.2...0.7.3) (2026-11-07)
 
 ### Features & Enhancements
