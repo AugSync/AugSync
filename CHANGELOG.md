@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.7.6](https://github.com/AugSync/AugSync/compare/0.7.5...0.7.6) (2026-11-08)
+
+### Features & Enhancements
+
+* **apps:** AugSync apps page with the site's header, colors, fonts and app icons ([eb62c5f](https://github.com/AugSync/AugSync/commit/eb62c5f593eb86e3e5c68631573fd341909de8d1))
+
 ## [0.7.5](https://github.com/AugSync/AugSync/compare/0.7.4...0.7.5) (2026-11-08)
 
 ### Features & Enhancements
