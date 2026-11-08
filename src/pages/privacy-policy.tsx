@@ -1,30 +1,11 @@
 import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { APPS } from '../lib/augsyncApps';
 
 const EMAIL = 'augustobarco.dev@gmail.com';
 
 // Generic policy for the shared Google sign-in screen («AugSync»): it covers every app, and each app keeps its own policy.
-const APPS: { name: string; href: string }[] = [
-  { name: 'Estímalo', href: '/apps/estimalo/privacy-policy' },
-  { name: 'Rocket Alliance', href: '/apps/rocket-alliance' },
-  { name: 'Life Calendar', href: '/apps/life-calendar/privacy-policy' },
-  { name: 'Impostor', href: '/apps/impostor-game/privacy-policy' },
-  { name: 'Football Fan 2026', href: '/apps/football-fan-2026/privacy-policy' },
-  { name: 'Bubble Zen', href: '/apps/bubble-zen/privacy-policy' },
-  {
-    name: 'Capybara Stack',
-    href: '/apps/capybara-stack-pet-tower-jump/privacy-policy',
-  },
-  {
-    name: 'Flashlight Compass',
-    href: '/apps/flashlight-compass/privacy-policy',
-  },
-  { name: 'Jewel Blast Saga', href: '/apps/jewel-blast-saga/privacy-policy' },
-  { name: 'Leveler 360', href: '/apps/leveler-360/privacy-policy' },
-  { name: 'Ludo Savage', href: '/apps/ludo-savage/privacy-policy' },
-];
-
 const AppList = () => (
   <ul>
     {APPS.map((a) => (
