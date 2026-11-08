@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.7.5](https://github.com/AugSync/AugSync/compare/0.7.4...0.7.5) (2026-11-08)
+
+### Features & Enhancements
+
+* AugSync apps brand page (/apps) for Google sign-in verification ([0311ce1](https://github.com/AugSync/AugSync/commit/0311ce1c1cff88289b4f0935111bb002f1ff4619))
+
 ## [0.7.4](https://github.com/AugSync/AugSync/compare/0.7.3...0.7.4) (2026-11-08)
 
 ### Features & Enhancements
