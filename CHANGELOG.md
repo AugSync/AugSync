@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.9.0](https://github.com/AugSync/AugSync/compare/0.8.0...0.9.0) (2026-11-12)
+
+### Features & Enhancements
+
+* **si-oficial:** terms of use page ([5003320](https://github.com/AugSync/AugSync/commit/5003320060cf885f5ea3ff325e2a6225f5fcb2da))
+
 ## [0.8.0](https://github.com/AugSync/AugSync/compare/0.7.6...0.8.0) (2026-11-12)
 
 ### Features & Enhancements
