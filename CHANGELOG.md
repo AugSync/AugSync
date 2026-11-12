@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.8.0](https://github.com/AugSync/AugSync/compare/0.7.6...0.8.0) (2026-11-12)
+
+### Features & Enhancements
+
+* **si-oficial:** privacy policy and data deletion pages ([a9517b3](https://github.com/AugSync/AugSync/commit/a9517b3ee17f48c0abcb03473498077458c20f50))
+
 ## [0.7.6](https://github.com/AugSync/AugSync/compare/0.7.5...0.7.6) (2026-11-08)
 
 ### Features & Enhancements
