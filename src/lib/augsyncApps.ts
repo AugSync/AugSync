@@ -6,6 +6,11 @@ export const APPS: { name: string; href: string; icon: string }[] = [
     icon: '/apps/estimalo.png',
   },
   {
+    name: 'Sí, Oficial',
+    href: '/apps/si-oficial/privacy-policy',
+    icon: '/apps/si-oficial.png',
+  },
+  {
     name: 'Rocket Alliance',
     href: '/apps/rocket-alliance',
     icon: '/rocket-alliance.png',
