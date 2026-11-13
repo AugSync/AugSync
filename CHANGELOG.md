@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.10.0](https://github.com/AugSync/AugSync/compare/0.9.0...0.10.0) (2026-11-13)
+
+### Features & Enhancements
+
+* **nocturna:** privacy policy and terms of use pages ([7478565](https://github.com/AugSync/AugSync/commit/74785653f0ac0885716c33f71b66cb9196f2500d))
+
 ## [0.9.0](https://github.com/AugSync/AugSync/compare/0.8.0...0.9.0) (2026-11-12)
 
 ### Features & Enhancements
